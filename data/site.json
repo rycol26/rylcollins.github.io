@@ -1,0 +1,27 @@
+{
+  "name": "Ryan Collins",
+  "title": "Electrical / Controls EIT",
+  "location": "Kelowna, BC",
+  "email": "rylcollins@gmail.com",
+  "phone": "(778) 538-2064",
+  "experience": [
+    {
+      "company": "SKYTRAC Systems",
+      "role": "DAO Engineering Co-op",
+      "dates": "May 2026 \u2013 Present",
+      "summary": "Avionics installation, configuration-controlled documentation, ECO/FAI support, certification records, and AI-assisted engineering workflows."
+    },
+    {
+      "company": "4AG Robotics",
+      "role": "Mechatronics Co-op Student",
+      "dates": "2024 & 2025",
+      "summary": "Robot electrical design, PLC/HMI programming, SCARA wiring documentation, commissioning, customer-site upgrades, and troubleshooting."
+    },
+    {
+      "company": "Wexxar Bel",
+      "role": "Electrical Co-op Student",
+      "dates": "2023",
+      "summary": "Machine schematics, UL electrical checks, PLC uploads, and an R&D actuator lifecycle test station."
+    }
+  ]
+}

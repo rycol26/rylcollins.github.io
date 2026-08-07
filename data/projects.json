@@ -1,0 +1,1296 @@
+[
+  {
+    "id": "field-rover",
+    "title": "Autonomous Field Rover & Sensor Platform",
+    "year": "2026\u2013Present",
+    "featured": true,
+    "category": [
+      "Robotics",
+      "Embedded",
+      "Computer Vision"
+    ],
+    "status": "Active development",
+    "summary": "A modular Raspberry Pi/Linux field robotics platform for geotagged sensing, remote diagnostics, computer-vision development, and future autonomous operation.",
+    "impact": [
+      "RGB + LiDAR + GNSS + IMU",
+      "CAN-based architecture",
+      "Remote diagnostics"
+    ],
+    "overview": [
+      "I am developing a modular field robotics platform for sensor integration, field-data collection, computer-vision development, and future autonomous operation. The current prototype is intentionally human-powered so the sensing, electrical, software, and safety systems can be validated before powered mobility is introduced.",
+      "The platform is designed as a reusable robotics system rather than around one demo. Current work emphasizes reliable field data, repeatable diagnostics, and architecture that can migrate to a larger powered rover."
+    ],
+    "objectives": [
+      "Integrate the primary perception and localization sensors.",
+      "Build a repeatable image and sensor-data pipeline.",
+      "Develop remote monitoring, health checks, and diagnostics.",
+      "Create a modular electrical and CAN communications architecture.",
+      "Establish safety-state logic before powered mobility.",
+      "Preserve raw field data for future computer-vision development."
+    ],
+    "role": [
+      "Electrical and controls architecture",
+      "Raspberry Pi/Linux services",
+      "Camera and sensor integration",
+      "Remote diagnostics and networking",
+      "Safety-state logic",
+      "Structured logging and field validation"
+    ],
+    "process": [
+      [
+        "System architecture",
+        "Separated high-bandwidth sensing from embedded control and designed around Raspberry Pi/Linux high-level compute with CAN-based expansion."
+      ],
+      [
+        "Camera pipeline",
+        "Built repeatable image-capture services with stable USB device mapping, remote access, health monitoring, and diagnostics."
+      ],
+      [
+        "Safety and observability",
+        "Developed safety-state logic and system-health reporting before powered mobility."
+      ],
+      [
+        "Field-data workflow",
+        "Structured capture around reusable imagery, diagnostics, timing, and location information."
+      ]
+    ],
+    "results": [
+      "Raspberry Pi/Linux onboard computing and remote access are operational.",
+      "Camera capture, stable device mapping, and health monitoring are operational.",
+      "Core safety-state logic and structured data-capture infrastructure are implemented.",
+      "Sensor integration and localization testing are continuing before powered mobility is added."
+    ],
+    "technologies": [
+      "Raspberry Pi",
+      "Linux",
+      "Python",
+      "V4L2",
+      "FFmpeg",
+      "systemd",
+      "Tailscale",
+      "CAN bus",
+      "RGB cameras",
+      "2D LiDAR",
+      "IMU",
+      "GNSS",
+      "LTE"
+    ],
+    "evidence": [
+      [
+        "System architecture diagram",
+        "recommended",
+        "Show sensing, compute, communications, safety, and logging together."
+      ],
+      [
+        "Field platform photo",
+        "recommended",
+        "Establish the physical system and current prototype state."
+      ],
+      [
+        "Camera diagnostics screenshot",
+        "recommended",
+        "Prove remote observability and repeatable capture tooling."
+      ]
+    ],
+    "media": [
+      {
+        "type": "image",
+        "src": "assets/media/field-rover/prototype_front.jpg",
+        "caption": "Current field-platform prototype during outdoor hardware integration.",
+        "alt": "Front view of the current field rover prototype",
+        "layout": "portrait",
+        "placement": "overview"
+      },
+      {
+        "type": "image",
+        "src": "assets/media/field-rover/prototype_overhead.jpg",
+        "caption": "Top-down view of the current prototype and onboard hardware packaging.",
+        "alt": "Overhead view of the field rover prototype",
+        "layout": "portrait",
+        "placement": "overview"
+      },
+      {
+        "type": "image",
+        "src": "assets/media/field-rover/architecture.svg",
+        "caption": "Current high-level sensing, compute, data, and control architecture.",
+        "alt": "Field rover system architecture diagram",
+        "layout": "wide",
+        "placement": "development"
+      }
+    ],
+    "hero": "assets/media/field-rover/prototype_front.jpg"
+  },
+  {
+    "id": "aerospace",
+    "title": "UBCO Aerospace \u2014 2026 Urban Firefighting Drone System",
+    "year": "2024\u20132026",
+    "featured": true,
+    "category": [
+      "Robotics",
+      "Power Electronics",
+      "Leadership"
+    ],
+    "status": "Competition complete",
+    "summary": "Electrical-system leadership for a multi-drone autonomous firefighting project that placed 6th overall and won the 2026 AEAC Innovation Award.",
+    "impact": [
+      "2026 AEAC Innovation Award",
+      "6th overall",
+      "50 V \u2192 5 V / 40 W converter"
+    ],
+    "overview": [
+      "From September 2024 to June 2026, I served as Director of Electrical for the UBCO Aerospace Team. The 2026 project centered on an urban-firefighting mission requiring multiple unmanned aircraft to perform scouting, navigation, sensing, target detection, and coordinated operation.",
+      "My role combined electrical architecture, power electronics, sensor integration, design reviews, work breakdown, and cross-disciplinary integration with software, autonomy, and mechanical teams."
+    ],
+    "objectives": [
+      "Provide reliable power to flight computers and sensors.",
+      "Integrate navigation and perception hardware.",
+      "Support autonomous takeoff/landing, scouting, localization, and vision tasks.",
+      "Reduce electrical-system weight while improving fault containment.",
+      "Coordinate interfaces between electrical, mechanical, autonomy, and software systems."
+    ],
+    "role": [
+      "Director of Electrical",
+      "Electrical-system architecture",
+      "Custom power-converter and power-distribution PCB design",
+      "LiDAR, RTK GPS, IMU, camera, LTE, and CAN integration",
+      "Design-review and milestone process",
+      "Cross-team interface coordination"
+    ],
+    "process": [
+      [
+        "Gated development",
+        "Introduced milestones, work-breakdown structures, peer review, and component/system roadmaps."
+      ],
+      [
+        "Sensor architecture",
+        "Integrated 2D LiDAR, RTK GPS, IMU, stereoscopic/Ethernet cameras, LTE, and CAN bus."
+      ],
+      [
+        "Power conversion",
+        "Designed a 50 V to 5 V, 40 W synchronous converter with filtering and protection."
+      ],
+      [
+        "Power distribution",
+        "Designed a protected distribution PCB with resettable electronic fuses and inrush-current limiting."
+      ]
+    ],
+    "results": [
+      "Placed 6th overall at the 2026 AEAC competition.",
+      "Won the 2026 AEAC Innovation Award.",
+      "Completed a custom 50 V-to-5 V converter at approximately 92% efficiency.",
+      "Built a multidisciplinary integration process connecting electrical design to autonomy, sensing, communications, and mechanical constraints."
+    ],
+    "technologies": [
+      "KiCad",
+      "CAN bus",
+      "2D LiDAR",
+      "RTK GNSS",
+      "IMU",
+      "Stereo cameras",
+      "LTE",
+      "Synchronous buck conversion",
+      "EMI filtering",
+      "OCP",
+      "OVP",
+      "UVLO",
+      "Soft start"
+    ],
+    "evidence": [
+      [
+        "Competition drone / team photo",
+        "recommended",
+        "Anchor the page in the completed system and result."
+      ],
+      [
+        "50 V \u2192 5 V converter PCB",
+        "recommended",
+        "Show a major individual hardware contribution."
+      ],
+      [
+        "Electrical architecture diagram",
+        "recommended",
+        "Explain sensor, compute, power, and communications integration."
+      ]
+    ],
+    "media": [
+      {
+        "type": "image",
+        "src": "assets/media/aerospace/aeac_team_innovation_award.jpg",
+        "caption": "UBCO Aerospace team with the 2026 AEAC Innovation Award.",
+        "alt": "UBCO Aerospace team with the Innovation Award",
+        "layout": "wide",
+        "placement": "validation"
+      },
+      {
+        "type": "image",
+        "src": "assets/media/aerospace/competition_aircraft_field.jpg",
+        "caption": "Competition aircraft during outdoor integration and field testing.",
+        "alt": "UBCO Aerospace competition aircraft in a field",
+        "layout": "portrait",
+        "placement": "overview"
+      },
+      {
+        "type": "image",
+        "src": "assets/media/aerospace/aircraft_sunset.jpg",
+        "caption": "One of the 2026 aircraft configurations during flight testing.",
+        "alt": "UBCO Aerospace drone silhouetted at sunset",
+        "layout": "portrait",
+        "placement": "development"
+      },
+      {
+        "type": "image",
+        "src": "assets/media/aerospace/water_cannon_flight.jpg",
+        "caption": "Water-cannon payload aircraft in flight.",
+        "alt": "Aerial firefighting drone with water-cannon payload in flight",
+        "layout": "wide",
+        "placement": "overview"
+      },
+      {
+        "type": "video",
+        "src": "assets/media/aerospace/competition_aircraft_flight.mp4",
+        "poster": "assets/media/aerospace/competition_aircraft_flight_poster.jpg",
+        "caption": "Flight-test footage of the larger competition aircraft.",
+        "layout": "wide",
+        "placement": "validation"
+      },
+      {
+        "type": "video",
+        "src": "assets/media/aerospace/midair_drone_handling.mp4",
+        "poster": "assets/media/aerospace/midair_drone_handling_poster.jpg",
+        "caption": "Mid-air drone handling / capture concept test.",
+        "layout": "wide",
+        "placement": "validation"
+      },
+      {
+        "type": "image",
+        "src": "assets/media/aerospace/architecture.svg",
+        "caption": "Electrical architecture overview for the 2026 multi-drone firefighting system.",
+        "alt": "AEAC electrical architecture diagram",
+        "layout": "wide",
+        "placement": "development"
+      }
+    ],
+    "hero": "assets/media/aerospace/water_cannon_flight.jpg"
+  },
+  {
+    "id": "capstone",
+    "title": "Mountain Resort Data Collection System \u2014 UBC Capstone",
+    "year": "2025\u20132026",
+    "featured": true,
+    "category": [
+      "Embedded",
+      "PCB",
+      "Project Management"
+    ],
+    "status": "Completed",
+    "summary": "A low-power distributed sensing system using ESP32 edge nodes, LoRa networking, ToF/mmWave sensing, custom power electronics, and a Linux gateway.",
+    "impact": [
+      ">500 m outdoor communication",
+      "End-to-end sensing \u2192 dashboard",
+      "Custom power PCB"
+    ],
+    "overview": [
+      "My UBC capstone team developed a distributed data-collection system intended for harsh mountain-resort deployment. Edge sensing nodes communicated over LoRa to a Linux gateway, spanning power electronics, sensing, wireless networking, enclosure constraints, and system-level validation."
+    ],
+    "objectives": [
+      "Develop low-power remote sensing nodes.",
+      "Provide reliable long-range wireless communication.",
+      "Design custom node power electronics and protection.",
+      "Demonstrate end-to-end data flow from sensors to dashboard."
+    ],
+    "role": [
+      "Electrical hardware and power design",
+      "Custom PCB schematic/layout and assembly",
+      "Battery sizing and component selection",
+      "LoRa and sensor hardware research",
+      "Technical documentation and design reviews"
+    ],
+    "process": [
+      [
+        "Architecture",
+        "Used ESP32 edge nodes with LoRa, ToF/mmWave sensing, and a Linux gateway."
+      ],
+      [
+        "Power design",
+        "Designed node power conversion, battery monitoring, and low-voltage shutoff."
+      ],
+      [
+        "Environmental constraints",
+        "Researched batteries, enclosure requirements, energy needs, and ISED 915 MHz constraints."
+      ],
+      [
+        "Validation",
+        "Bench-tested electronics and demonstrated outdoor communication and sensing-to-dashboard flow."
+      ]
+    ],
+    "results": [
+      "Demonstrated more than 500 m outdoor LoRa communication.",
+      "Demonstrated end-to-end sensing-to-dashboard data flow.",
+      "Completed custom PCB schematic, layout, assembly, and bench testing."
+    ],
+    "technologies": [
+      "ESP32",
+      "LoRa",
+      "ToF",
+      "mmWave",
+      "Linux",
+      "KiCad",
+      "Battery monitoring",
+      "Low-voltage shutoff"
+    ],
+    "evidence": [
+      [
+        "System architecture",
+        "recommended",
+        "Show node \u2192 LoRa \u2192 gateway \u2192 dashboard flow."
+      ],
+      [
+        "Custom PCB",
+        "recommended",
+        "Demonstrate hardware design ownership."
+      ],
+      [
+        "Outdoor range test",
+        "recommended",
+        "Support the >500 m result."
+      ]
+    ],
+    "media": [
+      {
+        "type": "image",
+        "src": "assets/media/capstone/system-flow.png",
+        "caption": "Final prototype flow chart: sensing, LoRa transport, Linux gateway, backend storage, and Grafana visualization.",
+        "alt": "Capstone final prototype flow chart"
+      },
+      {
+        "type": "image",
+        "src": "assets/media/capstone/prototype.png",
+        "caption": "Sensor testing prototype and receiver node used during integration.",
+        "alt": "Capstone sensor prototype and receiver node"
+      },
+      {
+        "type": "image",
+        "src": "assets/media/capstone/pcb-schematic.png",
+        "caption": "Node PCB schematic.",
+        "alt": "Capstone node PCB schematic"
+      },
+      {
+        "type": "image",
+        "src": "assets/media/capstone/pcb-3d.png",
+        "caption": "3D model of the node PCB.",
+        "alt": "Capstone node PCB 3D model"
+      }
+    ],
+    "hero": "assets/media/capstone/system-flow.png"
+  },
+  {
+    "id": "fpv-frame",
+    "title": "\u201cChimera\u201d FPV Drone Frame",
+    "year": "2022\u20132024",
+    "featured": false,
+    "category": [
+      "CAD",
+      "Fabrication",
+      "Robotics"
+    ],
+    "status": "Completed",
+    "summary": "A crash-driven custom FPV frame redesign focused on center-of-mass placement, crash behavior, packaging, and lightweight manufacture.",
+    "impact": [
+      "SolidWorks",
+      "3D-printed iteration",
+      "Carbon fiber + aluminum"
+    ],
+    "overview": [
+      "After an FPV crash broke an arm on an existing frame, I redesigned the aircraft around improved component packaging, center-of-mass placement, crash behavior, and a smaller footprint."
+    ],
+    "objectives": [
+      "Improve mass distribution and packaging.",
+      "Reduce weight and footprint.",
+      "Create intentional mechanical failure points.",
+      "Prototype cheaply before final manufacture."
+    ],
+    "role": [
+      "SolidWorks design",
+      "Component packaging",
+      "Rapid prototyping",
+      "Design for CNC manufacture",
+      "Electronics integration"
+    ],
+    "process": [
+      [
+        "Failure-driven redesign",
+        "Used the previous crash to identify weaknesses and redefine priorities."
+      ],
+      [
+        "Geometry iteration",
+        "Moved the battery and electronics and refined geometry around mass and packaging."
+      ],
+      [
+        "Rapid prototyping",
+        "3D printed successive designs and checked fit and behavior."
+      ],
+      [
+        "Final manufacture",
+        "Produced final components from carbon fiber and aluminum."
+      ]
+    ],
+    "results": [
+      "Completed the final frame in 2024.",
+      "Continued flight/crash testing informed future modification ideas."
+    ],
+    "technologies": [
+      "SolidWorks",
+      "3D printing",
+      "Carbon fiber",
+      "Aluminum",
+      "CNC machining",
+      "FPV electronics"
+    ],
+    "evidence": [
+      [
+        "SolidWorks assembly",
+        "available",
+        "Show final geometry and component packaging."
+      ],
+      [
+        "Prototype progression",
+        "recommended",
+        "Make the design iteration visible."
+      ],
+      [
+        "Center-of-mass diagram",
+        "recommended",
+        "Explain the main mechanical motivation."
+      ]
+    ],
+    "media": [
+      {
+        "type": "image",
+        "src": "assets/media/fpv-frame/final-frame.png",
+        "caption": "Completed carbon-fiber / aluminum frame and integrated aircraft.",
+        "alt": "Completed custom FPV drone frame"
+      },
+      {
+        "type": "image",
+        "src": "assets/media/fpv-frame/wiring.png",
+        "caption": "Electronics packaging and internal wiring during integration.",
+        "alt": "FPV drone frame internal wiring"
+      },
+      {
+        "type": "image",
+        "src": "assets/media/fpv-frame/prototype.jpg",
+        "caption": "Earlier frame geometry and rapid-prototype iterations.",
+        "alt": "FPV drone frame prototype progression"
+      }
+    ],
+    "hero": "assets/media/fpv-frame/final-frame.png"
+  },
+  {
+    "id": "fpv-drones",
+    "title": "Custom 5-inch & 3-inch FPV Drones",
+    "year": "2020\u20132021",
+    "featured": false,
+    "category": [
+      "Robotics",
+      "Electronics",
+      "Fabrication"
+    ],
+    "status": "Completed",
+    "summary": "Two custom FPV aircraft built from individual components, including a sub-250 g 3-inch platform and a 5-inch aircraft documented at 90+ km/h.",
+    "impact": [
+      "90+ km/h",
+      "Sub-250 g constraint",
+      "SBUS / PWM / UART"
+    ],
+    "overview": [
+      "I built two custom FPV multirotors from individual components rather than preassembled systems. Both platforms required component selection, wiring, soldering, protocol research, FPV video integration, troubleshooting, and flight testing."
+    ],
+    "objectives": [
+      "Build complete FPV aircraft from discrete components.",
+      "Develop electrical integration and troubleshooting skills.",
+      "Meet a sub-250 g constraint on the smaller aircraft."
+    ],
+    "role": [
+      "Component selection",
+      "Wiring and soldering",
+      "Protocol integration",
+      "Electrical validation",
+      "Flight testing"
+    ],
+    "process": [
+      [
+        "Component integration",
+        "Integrated propulsion, flight controller, receiver, camera/video, and wiring hardware."
+      ],
+      [
+        "Electrical integration",
+        "Used specifications and wiring diagrams, soldered connections, and checked for faults."
+      ],
+      [
+        "Protocols",
+        "Integrated SBUS, PWM, and UART."
+      ],
+      [
+        "Flight validation",
+        "Used repeated real flights and simulator practice."
+      ]
+    ],
+    "results": [
+      "The larger aircraft was documented at 90+ km/h cruising speed.",
+      "The smaller aircraft was completed around a sub-250 g constraint."
+    ],
+    "technologies": [
+      "Brushless motors",
+      "ESCs",
+      "Flight controllers",
+      "FPV cameras",
+      "SBUS",
+      "PWM",
+      "UART",
+      "Soldering"
+    ],
+    "evidence": [
+      [
+        "Flight footage",
+        "available",
+        "Prove the aircraft operate in real flight."
+      ],
+      [
+        "Internal wiring close-up",
+        "recommended",
+        "Show component-level integration."
+      ]
+    ],
+    "media": [
+      {
+        "type": "image",
+        "src": "assets/media/fpv-drones/5-inch.jpg",
+        "caption": "Original 5-inch aircraft and early flight setup.",
+        "alt": "5 inch FPV drone"
+      },
+      {
+        "type": "image",
+        "src": "assets/media/fpv-drones/3-inch.jpg",
+        "caption": "Smaller 3-inch aircraft developed around the sub-250 g constraint.",
+        "alt": "3 inch FPV drone"
+      }
+    ],
+    "hero": "assets/media/fpv-drones/5-inch.jpg"
+  },
+  {
+    "id": "bldc",
+    "title": "Axial Flux Brushless DC Motor",
+    "year": "2023",
+    "featured": false,
+    "category": [
+      "Power Electronics",
+      "CAD",
+      "Fabrication"
+    ],
+    "status": "Completed",
+    "summary": "A custom axial-flux BLDC motor and geared scissor mechanism built with custom coils, 3D-printed structure, and iterative troubleshooting.",
+    "impact": [
+      "100% project grade",
+      "Functional loaded motor",
+      "Custom 6-coil wye winding"
+    ],
+    "overview": [
+      "This university project developed a custom axial-flux BLDC motor and geared scissor-cutting mechanism using 3D-printed mechanical parts, custom-wound coils, and existing drone hardware."
+    ],
+    "objectives": [
+      "Create a functional custom BLDC motor.",
+      "Balance magnetic performance, air gap, rigidity, and manufacturability.",
+      "Demonstrate the motor under mechanical load."
+    ],
+    "role": [
+      "Team captain",
+      "SolidWorks motor design",
+      "Coil and wiring design",
+      "Prototype fabrication",
+      "Electrical troubleshooting"
+    ],
+    "process": [
+      [
+        "Architecture",
+        "Selected an axial-flux configuration."
+      ],
+      [
+        "Electromagnetic / mechanical design",
+        "Designed six coils in wye configuration while managing air gap and rigidity."
+      ],
+      [
+        "Fabrication",
+        "3D printed the structure and assembled the motor."
+      ],
+      [
+        "Test and failure analysis",
+        "Identified PLA thermal deformation and rotor stability as V1 limits."
+      ]
+    ],
+    "results": [
+      "Successfully ran the motor and drove the scissor mechanism.",
+      "Received a documented project grade of 100%."
+    ],
+    "technologies": [
+      "SolidWorks",
+      "3D printing",
+      "BLDC design",
+      "Wye winding",
+      "LiPo",
+      "Gearing",
+      "Multimeter"
+    ],
+    "evidence": [
+      [
+        "Successful motor test",
+        "available",
+        "Prove the custom motor operates."
+      ],
+      [
+        "Loaded scissor test",
+        "available",
+        "Show the motor doing mechanical work."
+      ],
+      [
+        "Thermal failure evidence",
+        "recommended",
+        "Turn the V1 limitation into an iteration story."
+      ]
+    ],
+    "media": [
+      {
+        "type": "image",
+        "src": "assets/media/bldc/motor-build.jpg",
+        "caption": "Axial-flux motor, test hardware, and additive-manufacturing process.",
+        "alt": "Axial flux BLDC motor build"
+      }
+    ],
+    "hero": "assets/media/bldc/motor-build.jpg"
+  },
+  {
+    "id": "printer",
+    "title": "Custom Upgraded 3D Printer",
+    "year": "2023",
+    "featured": false,
+    "category": [
+      "Fabrication",
+      "Electronics",
+      "CAD"
+    ],
+    "status": "Completed",
+    "summary": "A heavily modified Ender 3 Pro focused on print quality, material capability, maintainability, thermal management, wiring, and stability.",
+    "impact": [
+      "Mainboard + extruder retrofit",
+      "Custom electronics enclosure",
+      "Second Z axis"
+    ],
+    "overview": [
+      "I progressively rebuilt a Creality Ender 3 Pro around print quality, expanded material capability, electrical safety, serviceability, and mechanical stability."
+    ],
+    "objectives": [
+      "Improve print quality and material compatibility.",
+      "Improve safety, cooling, and maintainability.",
+      "Reduce alignment and vibration issues."
+    ],
+    "role": [
+      "Mechanical/electrical retrofit design",
+      "Wiring, crimping, soldering",
+      "3D modeling",
+      "Firmware modification",
+      "Calibration"
+    ],
+    "process": [
+      [
+        "Baseline",
+        "Assembled and calibrated the stock machine."
+      ],
+      [
+        "Electrical retrofit",
+        "Replaced the mainboard and extruder, added connectors, and redesigned electronics packaging."
+      ],
+      [
+        "Mechanical retrofit",
+        "Added bracing, a second Z leadscrew, and a custom alignment mechanism."
+      ],
+      [
+        "Process tuning",
+        "Recalibrated and developed slicer profiles."
+      ]
+    ],
+    "results": [
+      "Completed a substantially upgraded printer with improved maintainability and broader capability."
+    ],
+    "technologies": [
+      "FDM printing",
+      "Firmware",
+      "Slicer tuning",
+      "Soldering",
+      "Crimping",
+      "CAD",
+      "Motion systems"
+    ],
+    "evidence": [
+      [
+        "Completed printer photo",
+        "available",
+        "Show the final integrated retrofit."
+      ],
+      [
+        "Before/after print samples",
+        "recommended",
+        "Show print-quality improvement."
+      ],
+      [
+        "Custom Z mechanism",
+        "recommended",
+        "Highlight the custom mechanical contribution."
+      ]
+    ],
+    "media": [
+      {
+        "type": "image",
+        "src": "assets/media/printer/final-printer.png",
+        "caption": "Completed upgraded printer showing the dual-Z and rebuilt mechanical package.",
+        "alt": "Completed custom upgraded 3D printer"
+      },
+      {
+        "type": "image",
+        "src": "assets/media/printer/original-printer.jpg",
+        "caption": "Earlier printer configuration and baseline hardware.",
+        "alt": "Original Ender 3 Pro configuration"
+      }
+    ],
+    "hero": "assets/media/printer/final-printer.png"
+  },
+  {
+    "id": "rc-plane",
+    "title": "3D Printed Head-Tracking RC Airplane",
+    "year": "2024\u2013Present",
+    "featured": false,
+    "category": [
+      "CAD",
+      "Embedded",
+      "Robotics"
+    ],
+    "status": "In progress",
+    "summary": "A repairable 3D-printed RC aircraft with a planned Arduino head-tracking FPV camera gimbal and modular electronics packaging.",
+    "impact": [
+      "Lightweight printed airframe",
+      "Head-tracking architecture",
+      "Repairable modular design"
+    ],
+    "overview": [
+      "This project explores a repairable 3D-printed RC aircraft with a head-tracking FPV camera. Damaged structural parts can be reprinted instead of replacing a conventional airframe."
+    ],
+    "objectives": [
+      "Create a repairable printable airframe.",
+      "Minimize mass while maintaining structure.",
+      "Implement pilot head-tracking for the camera.",
+      "Protect and modularize expensive electronics."
+    ],
+    "role": [
+      "Aircraft mechanical design",
+      "Head-tracking architecture",
+      "Aircraft wiring design",
+      "Design for additive manufacturing"
+    ],
+    "process": [
+      [
+        "Airframe",
+        "Selected one-wall printed construction with internal ribbing."
+      ],
+      [
+        "Head tracking",
+        "Designed an Arduino-based head tracker and servo gimbal architecture."
+      ],
+      [
+        "Electrical",
+        "Completed aircraft wiring design."
+      ],
+      [
+        "Future modularity",
+        "Defined a protected electronics module transferable between airframes."
+      ]
+    ],
+    "results": [
+      "Airframe design remains in progress.",
+      "Head-tracking and wiring are documented at the design level.",
+      "No completed flight test is claimed yet."
+    ],
+    "technologies": [
+      "SolidWorks",
+      "3D printing",
+      "Arduino",
+      "Servos",
+      "FPV camera"
+    ],
+    "evidence": [
+      [
+        "Current CAD",
+        "available",
+        "Show the airframe geometry."
+      ],
+      [
+        "Wiring diagram",
+        "recommended",
+        "Prove the electrical architecture."
+      ],
+      [
+        "Flight-test video",
+        "future",
+        "Validate the aircraft after first flight."
+      ]
+    ],
+    "media": [
+      {
+        "type": "image",
+        "src": "assets/media/rc-plane/wing-and-cad.jpg",
+        "caption": "Lightweight printed wing prototypes and aircraft CAD concept.",
+        "alt": "3D printed RC airplane wing and CAD"
+      }
+    ],
+    "hero": "assets/media/rc-plane/wing-and-cad.jpg"
+  },
+  {
+    "id": "wind",
+    "title": "Portable Vertical-Axis Wind Turbine",
+    "year": "2025\u2013Present",
+    "featured": false,
+    "category": [
+      "Power Electronics",
+      "CAD",
+      "Fabrication"
+    ],
+    "status": "In progress",
+    "summary": "A compact wind-powered backcountry charging system combining a vertical-axis turbine, custom generator work, rectification, and regulated USB output.",
+    "impact": [
+      "Portable VAWT",
+      "3-phase rectification",
+      "5 V USB architecture"
+    ],
+    "overview": [
+      "This project is a portable wind-powered generator intended for backcountry canoe and camping trips. A vertical-axis architecture was selected for changing wind directions and simple deployment."
+    ],
+    "objectives": [
+      "Portable and weather resistant.",
+      "Charge a power bank remotely.",
+      "Keep rotor/blade mass low.",
+      "Develop a compact generator and conversion chain."
+    ],
+    "role": [
+      "Concept selection",
+      "SolidWorks mechanical design",
+      "Coil research",
+      "AC-to-DC conversion planning",
+      "Additive-manufacturing research"
+    ],
+    "process": [
+      [
+        "Architecture",
+        "Selected a portable VAWT."
+      ],
+      [
+        "Mechanical design",
+        "Modeled rotor, stator, blade mounting, and weatherproofing."
+      ],
+      [
+        "Power conversion",
+        "Defined a 3-phase rectifier and buck stage."
+      ],
+      [
+        "Generator design",
+        "Began coil sizing around required voltage/current."
+      ]
+    ],
+    "results": [
+      "Major mechanical structures are designed.",
+      "Electrical selection and coil development are ongoing.",
+      "No completed output-power test is claimed yet."
+    ],
+    "technologies": [
+      "SolidWorks",
+      "3-phase generator",
+      "Bridge rectifier",
+      "Buck converter",
+      "5 V USB",
+      "Magnetics",
+      "3D printing"
+    ],
+    "evidence": [
+      [
+        "SolidWorks assembly",
+        "available",
+        "Show the mechanical architecture."
+      ],
+      [
+        "Electrical block diagram",
+        "recommended",
+        "Explain generator \u2192 rectifier \u2192 buck \u2192 USB."
+      ],
+      [
+        "Bench output plot",
+        "future",
+        "Quantify electrical performance."
+      ]
+    ],
+    "media": [
+      {
+        "type": "image",
+        "src": "assets/media/wind/turbine-cad.jpg",
+        "caption": "Vertical-axis turbine reference geometry and custom generator CAD.",
+        "alt": "Vertical axis wind turbine and generator CAD"
+      }
+    ],
+    "hero": "assets/media/wind/turbine-cad.jpg"
+  },
+  {
+    "id": "self-driving",
+    "title": "Machine-Learning Self-Driving Car",
+    "year": "2022",
+    "featured": false,
+    "category": [
+      "Computer Vision",
+      "Embedded",
+      "Robotics"
+    ],
+    "status": "Completed",
+    "summary": "A Raspberry Pi camera-based model car trained to follow a curved track using Python and neural-network steering prediction.",
+    "impact": [
+      "R\u00b2 97.03%",
+      "MSE 9.9",
+      "93% project grade"
+    ],
+    "overview": [
+      "This university team project used a Raspberry Pi model car, onboard camera, Python, and machine learning to follow a curved track."
+    ],
+    "objectives": [
+      "Build a camera-based track-following car.",
+      "Apply ML to a physical robotics platform.",
+      "Compare multiple neural-network candidates."
+    ],
+    "role": [
+      "Team coordination",
+      "Python development",
+      "Neural-network development",
+      "Raspberry Pi work",
+      "Assembly and wiring"
+    ],
+    "process": [
+      [
+        "Hardware",
+        "Assembled and wired the Raspberry Pi car and camera."
+      ],
+      [
+        "Software",
+        "Developed car-control functions in Python."
+      ],
+      [
+        "Model development",
+        "Trained multiple candidate networks."
+      ],
+      [
+        "Validation",
+        "Selected and tested the best network on the physical track."
+      ]
+    ],
+    "results": [
+      "The car successfully followed the path.",
+      "Selected model achieved MSE 9.9 and R\u00b2 97.03%.",
+      "Received a documented grade of 93%."
+    ],
+    "technologies": [
+      "Raspberry Pi",
+      "Python",
+      "Camera vision",
+      "Neural networks",
+      "ReLU"
+    ],
+    "evidence": [
+      [
+        "Track-following video",
+        "available",
+        "Prove end-to-end autonomy."
+      ],
+      [
+        "Network diagram",
+        "recommended",
+        "Make the model architecture easy to inspect."
+      ],
+      [
+        "Training plots",
+        "recommended",
+        "Support performance claims if originals remain."
+      ]
+    ],
+    "media": []
+  },
+  {
+    "id": "guitar",
+    "title": "Guitar Filter & Compressor",
+    "year": "2023",
+    "featured": false,
+    "category": [
+      "Software",
+      "Signal Processing"
+    ],
+    "status": "Completed",
+    "summary": "A MATLAB frequency-domain audio project that isolates chord tones and normalizes their amplitudes with band-pass filtering and compression.",
+    "impact": [
+      "1.2% final amplitude variance",
+      "98% project grade",
+      "Generalized user-input version"
+    ],
+    "overview": [
+      "This individual project used MATLAB to process an acoustic-guitar chord in the frequency domain, isolate notes, and normalize their amplitudes."
+    ],
+    "objectives": [
+      "Apply Fourier/filter concepts to audio.",
+      "Equalize tone amplitudes.",
+      "Generalize beyond the fixed assignment input."
+    ],
+    "role": [
+      "MATLAB programming",
+      "Filter design",
+      "Signal processing",
+      "Validation and optimization"
+    ],
+    "process": [
+      [
+        "Signal decomposition",
+        "Analyzed the chord in the frequency domain."
+      ],
+      [
+        "Filter design",
+        "Created band-pass filters around target notes."
+      ],
+      [
+        "Compression",
+        "Scaled components toward average amplitude."
+      ],
+      [
+        "Generalization",
+        "Modified the code for user-selected audio and chord frequencies."
+      ]
+    ],
+    "results": [
+      "Reduced final tone-amplitude variance to 1.2%.",
+      "Received a documented grade of 98%."
+    ],
+    "technologies": [
+      "MATLAB",
+      "FFT",
+      "IFFT",
+      "Band-pass filters",
+      "designfilt",
+      "Audio processing"
+    ],
+    "evidence": [
+      [
+        "Before/after spectrum",
+        "recommended",
+        "Visually prove the compression result."
+      ],
+      [
+        "MATLAB code excerpt",
+        "recommended",
+        "Show the filter logic."
+      ],
+      [
+        "Audio clips",
+        "recommended",
+        "Let visitors hear the result."
+      ]
+    ],
+    "media": [
+      {
+        "type": "image",
+        "src": "assets/media/guitar/signal-spectrum.jpg",
+        "caption": "Unfiltered spectrum, filtered spectrum, and time-domain signal from the MATLAB project.",
+        "alt": "Guitar signal filtering plots"
+      }
+    ],
+    "hero": "assets/media/guitar/signal-spectrum.jpg"
+  },
+  {
+    "id": "motorsports",
+    "title": "UBCO Motorsports Racecar",
+    "year": "2022",
+    "featured": false,
+    "category": [
+      "Electrical",
+      "CAD",
+      "Team"
+    ],
+    "status": "Completed",
+    "summary": "Electrical-team work on a Formula Student-style racecar, including wiring-harness organization, ECU support, and a custom radio mounting solution.",
+    "impact": [
+      "Competition vehicle",
+      "ECU / harness exposure",
+      "Vehicle packaging constraints"
+    ],
+    "overview": [
+      "As a member of the UBCO Motorsports electrical team, I contributed to a Formula Student-style single-seat racecar and its ECU, PMU, harness, sensors, and wireless systems."
+    ],
+    "objectives": [
+      "Support a reliable racecar electrical system.",
+      "Package wiring around heat, motion, and structure.",
+      "Prepare the car for competition."
+    ],
+    "role": [
+      "Wiring harness organization",
+      "ECU configuration support",
+      "Radio mount and wiring solution",
+      "3D-printed packaging support"
+    ],
+    "process": [
+      [
+        "Team integration",
+        "Worked within multidisciplinary design meetings."
+      ],
+      [
+        "Harness / ECU",
+        "Focused on wiring organization and ECU support."
+      ],
+      [
+        "Radio integration",
+        "Designed a mounting and wiring solution."
+      ],
+      [
+        "Competition build",
+        "Contributed to the completed vehicle."
+      ]
+    ],
+    "results": [
+      "The car competed in Virginia in summer 2022.",
+      "The project provided early practical exposure to ECU wiring, sensors, routing, and vehicle packaging."
+    ],
+    "technologies": [
+      "ECU",
+      "PMU",
+      "Wiring harnesses",
+      "Sensors",
+      "3D printing",
+      "Vehicle electrical"
+    ],
+    "evidence": [
+      [
+        "Finished racecar",
+        "available",
+        "Show the completed team outcome."
+      ],
+      [
+        "Harness close-up",
+        "recommended",
+        "Support your strongest personal contribution."
+      ],
+      [
+        "Radio mount",
+        "recommended",
+        "Show a personally owned design artifact."
+      ]
+    ],
+    "media": [
+      {
+        "type": "image",
+        "src": "assets/media/motorsports/chassis.jpg",
+        "caption": "Formula Student chassis during the build.",
+        "alt": "UBCO Motorsports chassis"
+      },
+      {
+        "type": "image",
+        "src": "assets/media/motorsports/finished-car.jpg",
+        "caption": "Completed competition vehicle.",
+        "alt": "UBCO Motorsports finished racecar"
+      }
+    ],
+    "hero": "assets/media/motorsports/chassis.jpg"
+  },
+  {
+    "id": "space-station",
+    "title": "SolidWorks Space Station",
+    "year": "2020",
+    "featured": false,
+    "category": [
+      "CAD",
+      "Leadership"
+    ],
+    "status": "Completed",
+    "summary": "A large first-year team CAD project focused on SolidWorks assemblies, remote collaboration, subsystem ownership, and integration under deadline.",
+    "impact": [
+      "Top-10 class result",
+      "96% project grade",
+      "Most SolidWorks parts among groups"
+    ],
+    "overview": [
+      "This first-year team project used SolidWorks to create a large interplanetary transport concept while deliberately applying advanced CAD and assembly tools."
+    ],
+    "objectives": [
+      "Demonstrate advanced SolidWorks skills.",
+      "Coordinate independently designed components.",
+      "Develop remote leadership and integration processes."
+    ],
+    "role": [
+      "Team captain",
+      "Meeting leadership",
+      "Internal scheduling",
+      "Design coordination",
+      "SolidWorks integration support"
+    ],
+    "process": [
+      [
+        "Concept definition",
+        "Defined mission, rooms, utilities, and simulated-gravity concepts."
+      ],
+      [
+        "Work breakdown",
+        "Assigned room and feature ownership."
+      ],
+      [
+        "CAD development",
+        "Used advanced part and assembly tools."
+      ],
+      [
+        "Remote integration",
+        "Coordinated online reviews and resolved late file conflicts."
+      ]
+    ],
+    "results": [
+      "Ranked in the top 10 of the class.",
+      "Received a documented grade of 96%.",
+      "Portfolio records the highest SolidWorks part count among groups."
+    ],
+    "technologies": [
+      "SolidWorks",
+      "Assemblies",
+      "Sheet metal",
+      "Motion study",
+      "Remote coordination"
+    ],
+    "evidence": [
+      [
+        "Assembly video",
+        "available",
+        "Show the scale of the final assembly."
+      ],
+      [
+        "Motion-study capture",
+        "recommended",
+        "Support advanced-CAD claims."
+      ],
+      [
+        "Subsystem callouts",
+        "recommended",
+        "Clarify personal versus team-owned work."
+      ]
+    ],
+    "media": [
+      {
+        "type": "image",
+        "src": "assets/media/space-station/station.jpg",
+        "caption": "SolidWorks assembly views of the interplanetary transport concept.",
+        "alt": "SolidWorks space station assembly"
+      }
+    ],
+    "hero": "assets/media/space-station/station.jpg"
+  }
+]
