@@ -1,10 +1,29 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 650">
-<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#69f0ae"/><stop offset="1" stop-color="#74b9ff"/></linearGradient></defs>
-<rect width="1200" height="650" rx="28" fill="#0e141b"/><text x="58" y="70" fill="#edf3f7" font-size="32" font-family="Arial" font-weight="700">2026 AEAC Electrical Architecture</text>
-<g font-family="Arial" fill="#edf3f7">
-<rect x="55" y="145" width="245" height="360" rx="20" fill="#151e28" stroke="#25313c"/><text x="85" y="190" fill="#69f0ae" font-size="16" font-weight="700">SENSING</text><text x="85" y="245" font-size="21">2D LiDAR</text><text x="85" y="295" font-size="21">RTK GNSS</text><text x="85" y="345" font-size="21">IMU</text><text x="85" y="395" font-size="21">Stereo / Ethernet</text><text x="85" y="430" font-size="21">cameras</text>
-<rect x="420" y="160" width="360" height="160" rx="22" fill="url(#g)"/><text x="600" y="220" text-anchor="middle" fill="#07110d" font-size="26" font-weight="800">Autonomy + Flight Compute</text><text x="600" y="263" text-anchor="middle" fill="#07110d" font-size="19">navigation · scouting · vision</text>
-<rect x="420" y="380" width="360" height="150" rx="22" fill="#151e28" stroke="#25313c"/><text x="600" y="425" text-anchor="middle" fill="#74b9ff" font-size="16" font-weight="700">POWER</text><text x="600" y="468" text-anchor="middle" font-size="21">50 V → 5 V / 40 W converter</text><text x="600" y="503" text-anchor="middle" font-size="18">PDB · e-fuses · inrush limiting</text>
-<rect x="900" y="145" width="245" height="360" rx="20" fill="#151e28" stroke="#25313c"/><text x="930" y="190" fill="#74b9ff" font-size="16" font-weight="700">NETWORK + COMMS</text><text x="930" y="245" font-size="21">CAN bus</text><text x="930" y="295" font-size="21">LTE</text><text x="930" y="345" font-size="21">Ethernet</text><text x="930" y="395" font-size="21">Multi-drone</text><text x="930" y="430" font-size="21">interfaces</text>
-<path d="M300 265H420" stroke="#69f0ae" stroke-width="5"/><path d="M780 265H900" stroke="#74b9ff" stroke-width="5"/><path d="M600 320V380" stroke="#ffc857" stroke-width="5"/><text x="600" y="600" text-anchor="middle" fill="#9ba9b5" font-size="17">6th overall · 2026 AEAC Innovation Award</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 820">
+<defs><linearGradient id="accent" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#82c7c0"/><stop offset="1" stop-color="#8bc7d2"/></linearGradient><filter id="shadow"><feDropShadow dx="0" dy="10" stdDeviation="14" flood-opacity=".22"/></filter></defs>
+<rect width="1400" height="820" rx="28" fill="#091619"/>
+<g font-family="Arial,Helvetica,sans-serif">
+<text x="70" y="72" fill="#edf3f1" font-size="38" font-weight="700">2026 AEAC: the architectural decision</text>
+<text x="70" y="112" fill="#aebfbd" font-size="21">The mission did not require multiple aircraft. The team chose a mothership concept as a deliberate design direction.</text>
+<rect x="72" y="170" width="350" height="188" rx="20" fill="#10262b" stroke="#315159" stroke-width="2"/>
+<text x="102" y="210" fill="#8bc7d2" font-size="15" font-weight="700" letter-spacing="2">COMPETITION MISSION</text>
+<text x="102" y="258" fill="#edf3f1" font-size="26" font-weight="700">Urban firefighting</text>
+<text x="102" y="301" fill="#b9c8c5" font-size="19">scout · localize · detect · respond</text>
+<text x="102" y="331" fill="#b9c8c5" font-size="17">No multi-aircraft requirement</text>
+<path d="M422 264 H520" stroke="#557780" stroke-width="4"/><polygon points="520,264 502,254 502,274" fill="#557780"/>
+<rect x="520" y="152" width="430" height="224" rx="26" fill="url(#accent)" filter="url(#shadow)"/>
+<text x="735" y="205" text-anchor="middle" fill="#071315" font-size="16" font-weight="700" letter-spacing="2">TEAM DESIGN CHOICE</text>
+<text x="735" y="258" text-anchor="middle" fill="#071315" font-size="34" font-weight="800">Mothership architecture</text>
+<text x="735" y="305" text-anchor="middle" fill="#0b2528" font-size="19">treat the aircraft system as cooperating roles</text>
+<text x="735" y="335" text-anchor="middle" fill="#0b2528" font-size="19">instead of one monolithic vehicle</text>
+<path d="M950 264 H1047" stroke="#557780" stroke-width="4"/><polygon points="1047,264 1029,254 1029,274" fill="#557780"/>
+<rect x="1047" y="170" width="280" height="188" rx="20" fill="#10262b" stroke="#315159" stroke-width="2"/>
+<text x="1077" y="210" fill="#c8a46c" font-size="15" font-weight="700" letter-spacing="2">RESULT</text>
+<text x="1077" y="258" fill="#edf3f1" font-size="25" font-weight="700">Innovation Award</text>
+<text x="1077" y="299" fill="#b9c8c5" font-size="18">2026 AEAC</text>
+<text x="1077" y="330" fill="#b9c8c5" font-size="18">6th overall</text>
+<text x="70" y="454" fill="#edf3f1" font-size="27" font-weight="700">Electrical architecture that supported the concept</text>
+<rect x="72" y="500" width="300" height="205" rx="18" fill="#102429" stroke="#315159"/><text x="102" y="540" fill="#82c7c0" font-size="15" font-weight="700" letter-spacing="2">SENSE</text><text x="102" y="586" fill="#edf3f1" font-size="20">LiDAR · RTK GNSS · IMU</text><text x="102" y="620" fill="#edf3f1" font-size="20">cameras</text><text x="102" y="666" fill="#9fb6b5" font-size="16">Give autonomy a reliable view</text><text x="102" y="690" fill="#9fb6b5" font-size="16">of the aircraft + environment.</text>
+<rect x="405" y="500" width="300" height="205" rx="18" fill="#102429" stroke="#315159"/><text x="435" y="540" fill="#8bc7d2" font-size="15" font-weight="700" letter-spacing="2">COMPUTE</text><text x="435" y="586" fill="#edf3f1" font-size="20">flight + autonomy compute</text><text x="435" y="620" fill="#edf3f1" font-size="20">navigation · vision</text><text x="435" y="666" fill="#9fb6b5" font-size="16">Keep mission logic separate</text><text x="435" y="690" fill="#9fb6b5" font-size="16">from low-level interfaces.</text>
+<rect x="738" y="500" width="300" height="205" rx="18" fill="#102429" stroke="#315159"/><text x="768" y="540" fill="#c8a46c" font-size="15" font-weight="700" letter-spacing="2">POWER</text><text x="768" y="586" fill="#edf3f1" font-size="20">protected distribution</text><text x="768" y="620" fill="#edf3f1" font-size="20">fault + inrush control</text><text x="768" y="666" fill="#9fb6b5" font-size="16">Make subsystem faults easier</text><text x="768" y="690" fill="#9fb6b5" font-size="16">to contain and diagnose.</text>
+<rect x="1071" y="500" width="256" height="205" rx="18" fill="#102429" stroke="#315159"/><text x="1101" y="540" fill="#8bc7d2" font-size="15" font-weight="700" letter-spacing="2">CONNECT</text><text x="1101" y="586" fill="#edf3f1" font-size="20">CAN · Ethernet · LTE</text><text x="1101" y="620" fill="#edf3f1" font-size="20">team interfaces</text><text x="1101" y="666" fill="#9fb6b5" font-size="16">Make cross-discipline</text><text x="1101" y="690" fill="#9fb6b5" font-size="16">boundaries explicit.</text>
 </g></svg>

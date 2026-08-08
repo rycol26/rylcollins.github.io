@@ -1,0 +1,477 @@
+
+/* RC13 - direct source cleanup based on actual DOM */
+
+:root{
+  --paper:#0d1b1e;
+  --paper-2:#102429;
+  --ink:#edf3f1;
+  --muted:#b9c8c5;
+  --line:#315159;
+  --line-dark:#527178;
+  --accent:#82c7c0;
+  --accent-2:#8bc7d2;
+  --shell:1160px;
+}
+
+body{
+  background:
+    radial-gradient(circle at 84% -8%,rgba(139,199,210,.08),transparent 34rem),
+    #0d1b1e;
+  color:var(--ink);
+}
+
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-1;
+  pointer-events:none;
+  background:
+    linear-gradient(rgba(139,199,210,.024) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(139,199,210,.024) 1px,transparent 1px);
+  background-size:32px 32px;
+}
+
+.site-header{
+  background:rgba(13,27,30,.94);
+  border-color:var(--line);
+}
+.wordmark{color:var(--ink)}
+.main-nav{color:#a9c1c5}
+.main-nav a:hover{color:#d7f1f3}
+
+/* Hero: actual class is intro-grid, not hero-grid */
+.intro{padding:82px 0 74px}
+.intro-grid{
+  display:block;
+  margin-top:22px;
+}
+.intro h1{
+  max-width:920px;
+  font-size:clamp(42px,6vw,74px);
+}
+.intro-copy{
+  max-width:760px;
+  margin-top:30px;
+  font-size:18px;
+  color:var(--muted);
+}
+.intro-copy p{margin:0}
+
+/* Avoid a two-column motif for every section heading */
+.section-title-row{
+  display:block;
+  margin-bottom:38px;
+}
+.section-title-row>p{
+  max-width:720px;
+  margin:18px 0 0;
+  color:var(--muted);
+  font-size:15px;
+}
+
+/* Cards */
+.featured-projects{border-color:var(--line)}
+.featured-card{
+  background:#112a2f;
+  border-color:var(--line);
+}
+.featured-image{
+  background:#0a1518;
+  border-color:var(--line);
+}
+.featured-card p{color:var(--muted)}
+.featured-link{
+  color:#9bdce7;
+  font-weight:700;
+}
+.featured-card:hover .featured-link{color:#d2f4f8}
+.project-meta{color:#a7c8cd}
+
+.project-list{border-color:var(--line-dark)}
+.project-row{border-color:var(--line)}
+.project-row:hover{background:rgba(139,199,210,.045)}
+.project-row .row-year{color:#9fb7ba}
+.project-row p{color:var(--muted)}
+.row-category{
+  color:#8bc7d2;
+  font-weight:600;
+}
+.filter{color:#9fb7ba}
+.filter:hover,.filter.active{
+  color:var(--ink);
+  border-bottom-color:#8bc7d2;
+}
+
+/* Experience */
+.section-alt{background:#102429}
+.experience-list{border-color:var(--line-dark)}
+.experience-row{border-color:var(--line)}
+.experience-row .dates{color:#9fb7ba}
+.experience-row .role{color:#8bc7d2}
+.experience-row p{color:var(--muted)}
+
+/* About: full editorial flow, not split columns */
+.about{
+  display:block;
+  padding-bottom:96px;
+}
+.about-heading{
+  max-width:900px;
+}
+.about h2{
+  max-width:900px;
+  margin-bottom:34px;
+}
+.about-copy{
+  max-width:900px;
+  color:var(--muted);
+  font-size:17px;
+  line-height:1.78;
+}
+.about-copy p{margin:0 0 1.35rem}
+.about-rule{
+  width:74px;
+  height:3px;
+  background:linear-gradient(90deg,#82c7c0,#c8a46c);
+  margin:0 0 34px;
+}
+
+/* Project page: single-column content rhythm */
+.project-header{
+  padding:72px 0 42px;
+  border-color:var(--line);
+}
+.project-header h1{
+  max-width:960px;
+}
+.project-summary{
+  max-width:820px;
+  color:var(--muted);
+}
+.project-snapshot{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  margin-top:38px;
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+}
+.snapshot-item{
+  padding:17px 22px 18px 0;
+}
+.snapshot-item+.snapshot-item{
+  border-left:1px solid var(--line);
+  padding-left:22px;
+}
+.snapshot-item span{
+  display:block;
+  margin-bottom:6px;
+  font-family:Consolas,"Courier New",monospace;
+  font-size:10px;
+  text-transform:uppercase;
+  letter-spacing:.11em;
+  color:#8bc7d2;
+}
+.snapshot-item strong{
+  display:block;
+  font-size:14px;
+  line-height:1.35;
+  color:var(--ink);
+}
+
+/* Technologies is now its own horizontal section */
+.project-technologies{
+  padding:30px 0 34px;
+  border-bottom:1px solid var(--line);
+}
+.project-technologies .section-kicker{margin-bottom:14px}
+.tech-list{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+}
+.tech-item{
+  display:inline-flex;
+  align-items:center;
+  min-height:34px;
+  padding:6px 10px;
+  color:#dff3f2;
+  background:rgba(130,199,192,.08);
+  border:1px solid rgba(130,199,192,.34);
+  font-size:12px;
+  border-radius:4px;
+}
+
+/* Main project content gets full readable width */
+.project-content{
+  display:block;
+  padding:0 0 80px;
+}
+.project-main{
+  width:100%;
+}
+.project-main section{
+  position:relative;
+  padding:52px 0;
+  border-bottom:0;
+}
+.project-main section::after{
+  content:"";
+  position:absolute;
+  left:50%;
+  bottom:0;
+  width:100vw;
+  height:1px;
+  transform:translateX(-50%);
+  background:var(--line);
+}
+.project-main h2{
+  max-width:820px;
+}
+.project-main p,
+.project-main li{
+  max-width:820px;
+  color:var(--muted);
+  font-size:15px;
+}
+
+/* Let media extend wider than prose */
+.media-grid{
+  width:min(100%,1080px);
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:16px;
+  margin-top:28px;
+}
+.media-item{
+  background:#102429;
+  border-color:var(--line);
+}
+.media-item figcaption{
+  color:#a9bdbd;
+  border-color:var(--line);
+}
+
+.process-table{
+  max-width:920px;
+  border-color:var(--line-dark);
+}
+.process-row{border-color:var(--line)}
+.process-row span{color:var(--muted)}
+
+.next-project{
+  border-color:var(--line-dark);
+}
+.next-project span{color:#8bc7d2}
+
+.site-footer{
+  border-color:var(--line);
+}
+.footer-inner{
+  justify-content:flex-end;
+}
+.footer-inner a{color:#9bdce7}
+
+@media(max-width:920px){
+  .featured-projects{grid-template-columns:1fr 1fr}
+  .featured-card:last-child{grid-column:1/-1}
+  .project-row{grid-template-columns:90px 1fr;gap:10px 20px}
+  .project-row p{grid-column:2}
+  .row-category{display:none}
+  .experience-row{grid-template-columns:130px 1fr}
+  .experience-row p{grid-column:2}
+  .project-snapshot{grid-template-columns:1fr}
+  .snapshot-item+.snapshot-item{
+    border-left:0;
+    border-top:1px solid var(--line);
+    padding-left:0;
+  }
+}
+@media(max-width:640px){
+  .intro h1{font-size:42px}
+  .featured-projects{grid-template-columns:1fr}
+  .featured-card:last-child{grid-column:auto}
+  .experience-row{grid-template-columns:1fr;gap:6px}
+  .experience-row p{grid-column:auto}
+  .media-grid{grid-template-columns:1fr}
+}
+
+
+/* RC14 - project-tab hardening; homepage selectors intentionally untouched */
+
+.case-section h2{
+  max-width:900px;
+  font-size:clamp(28px,3.2vw,42px);
+  margin-bottom:18px;
+}
+
+.case-section > p,
+.case-section > ul{
+  max-width:860px;
+}
+
+.case-section > ul{
+  padding-left:20px;
+}
+
+.case-section > ul li{
+  margin-bottom:9px;
+}
+
+.project-snapshot{
+  background:rgba(16,36,41,.45);
+}
+
+.snapshot-item strong{
+  font-size:15px;
+}
+
+.project-technologies{
+  background:rgba(16,36,41,.28);
+}
+
+.tech-item{
+  color:#e8f6f5;
+  background:rgba(130,199,192,.10);
+  border-color:rgba(139,199,210,.42);
+}
+
+.media-item.wide{
+  grid-column:1/-1;
+}
+
+.media-item.wide img,
+.media-item.wide video{
+  max-height:720px;
+  object-fit:contain;
+  background:#091416;
+}
+
+.case-process .media-grid,
+.case-results .media-grid{
+  margin-top:34px;
+}
+
+@media(min-width:980px){
+  /* Vary rhythm without reverting to a universal two-column template. */
+  .case-role > ul{
+    columns:2;
+    column-gap:50px;
+    max-width:1000px;
+  }
+  .case-role > ul li{
+    break-inside:avoid;
+    padding-right:20px;
+  }
+}
+
+
+/* RC15 - project media rhythm and compact technology placement */
+
+/* Technologies belong to the project introduction, not a separate tall section. */
+.project-tech-inline{
+  max-width:1080px;
+  margin-top:26px;
+  padding-top:22px;
+  border-top:1px solid var(--line);
+}
+.project-tech-inline .section-kicker{
+  margin-bottom:13px;
+}
+.project-tech-inline .tech-list{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+}
+
+/* The snapshot now follows technologies without the previous dead zone. */
+.project-tech-inline + .project-snapshot{
+  margin-top:28px;
+}
+
+/* Retire the older standalone technology-section treatment if inherited anywhere. */
+.project-technologies{
+  padding:0!important;
+  margin:0!important;
+  border:0!important;
+  min-height:0!important;
+}
+
+/* Visual evidence should interrupt the narrative at useful points. */
+.case-section .media-grid{
+  margin-top:30px;
+  margin-bottom:4px;
+}
+.case-objectives .media-grid,
+.case-role .media-grid{
+  width:min(100%,980px);
+}
+.case-overview .media-grid,
+.case-process .media-grid,
+.case-results .media-grid{
+  width:min(100%,1080px);
+}
+
+/* Single pieces of evidence get breathing room without becoming giant empty bands. */
+.media-grid:has(.media-item:only-child){
+  grid-template-columns:minmax(0,900px);
+}
+
+/* Keep section rhythm compact when a visual closes the section. */
+.project-main section{
+  padding-top:48px;
+  padding-bottom:48px;
+}
+.project-main section .media-grid:last-child{
+  margin-bottom:-4px;
+}
+
+
+/* RC16 - centered evidence + infographic polish */
+.case-section .media-grid{
+  margin-left:auto;
+  margin-right:auto;
+  justify-content:center;
+  justify-items:center;
+}
+.media-item{
+  width:100%;
+  margin-left:auto;
+  margin-right:auto;
+}
+.media-item.wide{
+  width:min(100%,1180px);
+}
+.media-button{
+  width:100%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:#091416;
+}
+.media-item img,
+.media-item video{
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+}
+.media-item img[src$=".svg"]{
+  width:100%;
+  max-width:1180px;
+  height:auto;
+  object-fit:contain;
+}
+.media-item:has(img[src$=".svg"]){
+  max-width:1180px;
+  background:#091619;
+  border-color:rgba(139,199,210,.28);
+}
+.media-item:has(img[src$=".svg"]) figcaption{
+  max-width:900px;
+  margin:0 auto;
+  text-align:center;
+}
+.media-grid:has(.media-item:only-child){
+  width:min(100%,1180px)!important;
+  grid-template-columns:minmax(0,1180px)!important;
+  justify-content:center;
+}
