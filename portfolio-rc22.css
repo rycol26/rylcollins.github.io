@@ -475,3 +475,323 @@ body::before{
   grid-template-columns:minmax(0,1180px)!important;
   justify-content:center;
 }
+
+
+/* RC17 — evidence, ownership, engineering decisions */
+
+/* Make direct ownership legible before the reader reaches the long case study. */
+.ownership-band{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:0;
+  max-width:1080px;
+  margin-top:28px;
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+}
+.ownership-band>div{
+  padding:18px 24px 18px 0;
+}
+.ownership-band>div+div{
+  border-left:1px solid var(--line);
+  padding-left:24px;
+}
+.ownership-band span{
+  display:block;
+  margin-bottom:7px;
+  color:#8bc7d2;
+  font:700 10px/1.2 Consolas,"Courier New",monospace;
+  text-transform:uppercase;
+  letter-spacing:.12em;
+}
+.ownership-band strong{
+  display:block;
+  max-width:620px;
+  color:var(--ink);
+  font-size:14px;
+  line-height:1.55;
+  font-weight:600;
+}
+
+/* Decision cards intentionally look like technical notes, not SaaS cards. */
+.decision-section{
+  padding-top:56px!important;
+}
+.decision-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:18px;
+  margin-top:28px;
+}
+.decision-card{
+  position:relative;
+  min-height:100%;
+  padding:24px 22px 20px;
+  border-top:2px solid #82c7c0;
+  border-bottom:1px solid var(--line);
+  background:linear-gradient(180deg,rgba(130,199,192,.045),rgba(16,36,41,.12));
+}
+.decision-number{
+  color:#6e969d;
+  font:700 11px/1 Consolas,"Courier New",monospace;
+  letter-spacing:.12em;
+}
+.decision-card h3{
+  margin:13px 0 21px;
+  color:var(--ink);
+  font-size:20px;
+  line-height:1.25;
+}
+.decision-card dl,
+.decision-card dd{
+  margin:0;
+}
+.decision-card dl>div{
+  padding:13px 0;
+  border-top:1px solid rgba(49,81,89,.7);
+}
+.decision-card dt{
+  margin-bottom:5px;
+  color:#8bc7d2;
+  font:700 10px/1.2 Consolas,"Courier New",monospace;
+  text-transform:uppercase;
+  letter-spacing:.1em;
+}
+.decision-card dd{
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.55;
+}
+
+/* Failure/iteration evidence is a flow, not another generic bullet list. */
+.iteration-strip{
+  display:grid;
+  grid-template-columns:1fr 34px 1fr 34px 1fr;
+  align-items:start;
+  gap:12px;
+  max-width:1080px;
+  margin:36px auto 0;
+  padding:22px 0;
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+}
+.iteration-strip span{
+  display:block;
+  margin-bottom:8px;
+  color:#c8a46c;
+  font:700 10px/1.2 Consolas,"Courier New",monospace;
+  text-transform:uppercase;
+  letter-spacing:.11em;
+}
+.iteration-strip p{
+  margin:0;
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.55;
+}
+.iteration-arrow{
+  align-self:center;
+  color:#557780;
+  font-size:22px;
+  text-align:center;
+}
+
+/* Media should read as evidence. */
+.media-item figcaption{
+  padding:12px 14px 13px;
+  font-size:12px;
+  line-height:1.5;
+}
+.media-item img[src$=".svg"]{
+  max-height:none!important;
+}
+.media-item:has(img[src$=".svg"]){
+  box-shadow:0 12px 34px rgba(0,0,0,.16);
+}
+
+/* Top-line facts should stay compact. */
+.project-snapshot{
+  margin-top:26px;
+}
+.snapshot-item strong{
+  line-height:1.45;
+}
+
+@media(max-width:900px){
+  .ownership-band{
+    grid-template-columns:1fr;
+  }
+  .ownership-band>div+div{
+    border-left:0;
+    border-top:1px solid var(--line);
+    padding-left:0;
+  }
+  .decision-grid{
+    grid-template-columns:1fr;
+  }
+  .iteration-strip{
+    grid-template-columns:1fr;
+    gap:0;
+  }
+  .iteration-strip>div:not(.iteration-arrow){
+    padding:14px 0;
+  }
+  .iteration-arrow{
+    display:none;
+  }
+}
+
+/* RC18 — generated visuals now read as engineering schematics */
+.media-item:has(img[src$=".svg"]){
+  background:#091619;
+  border:1px solid rgba(139,199,210,.20);
+  box-shadow:none;
+}
+.media-item:has(img[src$=".svg"]) .media-button{
+  padding:0;
+  background:#091619;
+}
+.media-item:has(img[src$=".svg"]) figcaption{
+  color:#9fb6b5;
+  border-top:1px solid rgba(49,81,89,.65);
+  text-align:left;
+}
+\n/* RC19 — evidence sizing and hierarchy */\n.media-item.real-evidence{width:min(100%,920px);max-width:920px;margin-left:auto;margin-right:auto;background:#0b171a;}\n.media-item.real-evidence img,.media-item.real-evidence video{display:block;width:auto;max-width:100%;height:auto;max-height:min(64vh,640px);margin:0 auto;object-fit:contain;background:#091416;}\n.media-item.diagram-evidence{width:min(100%,980px);max-width:980px;margin-left:auto;margin-right:auto;}\n.media-item.diagram-evidence img{width:100%;height:auto;max-height:min(56vh,560px)!important;object-fit:contain;}\n.media-item figcaption{max-width:none!important;font-size:12px;line-height:1.5;text-align:left!important;}\n.media-grid:has(.media-item:only-child){width:min(100%,980px)!important;grid-template-columns:minmax(0,980px)!important;}\n.media-grid:has(.real-evidence:nth-child(2)){grid-template-columns:repeat(2,minmax(0,1fr));align-items:start;}\n.media-grid:has(.real-evidence:nth-child(2)) .real-evidence{max-width:100%;}\n.media-grid:has(.real-evidence:nth-child(2)) .real-evidence img,.media-grid:has(.real-evidence:nth-child(2)) .real-evidence video{max-height:min(48vh,480px);}\n@media(max-width:760px){.media-grid:has(.real-evidence:nth-child(2)){grid-template-columns:1fr}.media-item.real-evidence img,.media-item.real-evidence video,.media-item.diagram-evidence img{max-height:70vh!important;}}\n
+
+/* RC20 — screen-fit evidence */
+.media-item.real-evidence,
+.media-item.compact{
+  width:min(100%,820px);
+  max-width:820px;
+}
+
+.media-item.real-evidence img,
+.media-item.real-evidence video{
+  max-height:min(48vh,500px)!important;
+}
+
+.media-item.compact img,
+.media-item.compact video{
+  display:block;
+  width:auto;
+  max-width:100%;
+  height:auto;
+  max-height:min(46vh,470px)!important;
+  margin:0 auto;
+  object-fit:contain;
+}
+
+.media-item.portrait{
+  width:min(100%,620px)!important;
+  max-width:620px!important;
+}
+.media-item.portrait img,
+.media-item.portrait video{
+  max-height:min(52vh,540px)!important;
+  width:auto!important;
+  max-width:100%!important;
+  margin:0 auto;
+  object-fit:contain;
+}
+
+/* Give the project hero more authority without changing the frozen homepage. */
+.project-header .project-summary{
+  max-width:900px;
+  font-size:clamp(17px,1.6vw,21px);
+  line-height:1.58;
+}
+
+
+/* RC21 — paired engineering evidence */
+.media-grid{
+  align-items:start;
+}
+.media-item.pair{
+  width:100%!important;
+  max-width:none!important;
+  align-self:stretch;
+}
+.media-grid:has(.media-item.pair){
+  grid-template-columns:repeat(2,minmax(0,1fr));
+}
+.media-grid:has(.media-item.pair) .media-item.pair img{
+  width:100%!important;
+  height:auto!important;
+  max-height:min(48vh,500px)!important;
+  object-fit:contain;
+}
+@media(max-width:760px){
+  .media-grid:has(.media-item.pair){
+    grid-template-columns:1fr;
+  }
+}
+
+
+/* RC22 — requested media sizing */
+
+/* One primary evidence image should nearly fill a normal laptop viewport,
+   without requiring the viewer to scroll to understand the image. */
+.media-item.screenfill{
+  width:min(100%,1080px)!important;
+  max-width:1080px!important;
+  margin-left:auto;
+  margin-right:auto;
+}
+.media-item.screenfill img,
+.media-item.screenfill video{
+  display:block;
+  width:auto!important;
+  max-width:100%!important;
+  height:auto!important;
+  max-height:min(68vh,680px)!important;
+  margin:0 auto;
+  object-fit:contain;
+}
+
+/* Aerospace 2-photo + 2-video evidence grid. */
+.media-grid:has(.media-item.quadrant){
+  grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  width:min(100%,1080px)!important;
+  gap:14px;
+}
+.media-item.quadrant{
+  width:100%!important;
+  max-width:none!important;
+  margin:0!important;
+}
+.media-item.quadrant .media-button,
+.media-item.quadrant video{
+  width:100%!important;
+}
+.media-item.quadrant img,
+.media-item.quadrant video{
+  width:100%!important;
+  aspect-ratio:16/10;
+  height:auto!important;
+  max-height:none!important;
+  object-fit:cover!important;
+  background:#091416;
+}
+
+/* PCB schematic + board model intentionally form a matched pair. */
+.media-grid:has(.media-item.pair){
+  width:min(100%,1080px)!important;
+  grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  gap:14px!important;
+}
+.media-item.pair img{
+  aspect-ratio:4/3;
+  object-fit:contain!important;
+  background:#091416;
+}
+
+@media(max-width:760px){
+  .media-grid:has(.media-item.quadrant),
+  .media-grid:has(.media-item.pair){
+    grid-template-columns:1fr!important;
+  }
+  .media-item.screenfill img,
+  .media-item.screenfill video{
+    max-height:72vh!important;
+  }
+}

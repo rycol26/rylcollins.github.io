@@ -1,7 +1,7 @@
 const esc=s=>String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]));
 const id=new URLSearchParams(location.search).get('id');
 
-fetch('data/projects.json?v=rc16').then(r=>r.json()).then(projects=>{
+fetch('data/projects.json?v=rc22').then(r=>r.json()).then(projects=>{
   const p=projects.find(x=>x.id===id)||projects[0];
   const idx=projects.indexOf(p), next=projects[(idx+1)%projects.length];
 
@@ -10,22 +10,25 @@ fetch('data/projects.json?v=rc16').then(r=>r.json()).then(projects=>{
   const ul=items=>`<ul>${(items||[]).map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`;
 
   const mediaHtml=(placement)=>{
-    const items=(p.media||[]).filter(m=>(m.placement||'overview')===placement);
+    const items=(p.media||[]).filter(m=>!m.hidden && (m.placement||'overview')===placement);
     if(!items.length) return '';
 
     const html=items.map((m,i)=>{
       const layout=esc(m.layout||((items.length===1||i===0)?'wide':''));
 
+      const isDiagram=/\.svg(?:\?|$)/i.test(m.src||'');
+      const evidenceClass=isDiagram?'diagram-evidence':'real-evidence';
+
       if(m.type==='video'){
-        return `<figure class="media-item ${layout}">
+        return `<figure class="media-item ${layout} ${evidenceClass}">
           <video controls playsinline preload="metadata" ${m.poster?`poster="${esc(m.poster)}"`:''}>
-            <source src="${esc(m.src)}" type="video/mp4">
+            <source src="${esc(m.src)}${m.start?`#t=${Number(m.start)}`:''}" type="video/mp4">
           </video>
           <figcaption>${esc(m.caption||'')}</figcaption>
         </figure>`;
       }
 
-      return `<figure class="media-item ${layout}">
+      return `<figure class="media-item ${layout} ${evidenceClass}">
         <button class="media-button" data-lightbox="${esc(m.src)}">
           <img loading="lazy" src="${esc(m.src)}" alt="${esc(m.alt||p.title)}">
         </button>
@@ -51,6 +54,45 @@ fetch('data/projects.json?v=rc16').then(r=>r.json()).then(projects=>{
       <div class="tech-list">${(p.technologies||[]).map(t=>`<span class="tech-item">${esc(t)}</span>`).join('')}</div>
     </div>` : '';
 
+  const ownership=p.ownershipBand ? `
+    <div class="ownership-band">
+      <div>
+        <span>Owned directly</span>
+        <strong>${esc(p.ownershipBand.owned)}</strong>
+      </div>
+      <div>
+        <span>System / team outcome</span>
+        <strong>${esc(p.ownershipBand.team)}</strong>
+      </div>
+    </div>` : '';
+
+  const decisions=(p.decisions||[]).length ? `
+    <section class="case-section decision-section">
+      <div class="section-kicker">Engineering decisions</div>
+      <h2>Decisions that changed the system</h2>
+      <div class="decision-grid">
+        ${p.decisions.map((d,i)=>`
+          <article class="decision-card">
+            <div class="decision-number">${String(i+1).padStart(2,'0')}</div>
+            <h3>${esc(d.decision)}</h3>
+            <dl>
+              <div><dt>Why</dt><dd>${esc(d.why)}</dd></div>
+              <div><dt>Tradeoff</dt><dd>${esc(d.tradeoff)}</dd></div>
+              <div><dt>Evidence</dt><dd>${esc(d.evidence)}</dd></div>
+            </dl>
+          </article>`).join('')}
+      </div>
+    </section>` : '';
+
+  const iteration=p.iteration ? `
+    <div class="iteration-strip">
+      <div><span>Observed</span><p>${esc(p.iteration.observed)}</p></div>
+      <div class="iteration-arrow" aria-hidden="true">&rarr;</div>
+      <div><span>Changed</span><p>${esc(p.iteration.changed)}</p></div>
+      <div class="iteration-arrow" aria-hidden="true">&rarr;</div>
+      <div><span>Verified</span><p>${esc(p.iteration.verified)}</p></div>
+    </div>` : '';
+
   const st=p.sectionTitles||{};
   const head=(key, fallbackKicker, fallbackTitle)=>{
     const x=st[key]||[fallbackKicker,fallbackTitle];
@@ -61,7 +103,8 @@ fetch('data/projects.json?v=rc16').then(r=>r.json()).then(projects=>{
     <section class="project-header shell">
       <div class="intro-label">${esc(p.status)} &middot; ${esc(p.year)}</div>
       <h1>${esc(p.title)}</h1>
-      <p class="project-summary">${esc(p.summary)}</p>
+      <p class="project-summary">${esc(p.projectSummary||p.summary)}</p>
+      ${ownership}
       ${tech}
       ${snapshot}
     </section>
@@ -73,6 +116,8 @@ fetch('data/projects.json?v=rc16').then(r=>r.json()).then(projects=>{
           ${(p.overview||[]).map(x=>`<p>${esc(x)}</p>`).join('')}
           ${mediaHtml('overview')}
         </section>
+
+        ${decisions}
 
         <section class="case-section case-objectives">
           ${head('objectives','02 · Requirements','Objectives')}
@@ -90,6 +135,7 @@ fetch('data/projects.json?v=rc16').then(r=>r.json()).then(projects=>{
           ${head('process','04 · Development','Process and iteration')}
           <div class="process-table">${(p.process||[]).map(x=>`<div class="process-row"><strong>${esc(x[0])}</strong><span>${esc(x[1])}</span></div>`).join('')}</div>
           ${mediaHtml('development')}
+          ${iteration}
         </section>
 
         <section class="case-section case-results">

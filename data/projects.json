@@ -92,30 +92,30 @@
     "media": [
       {
         "type": "image",
-        "src": "assets/media/field-rover/prototype_front.jpg",
-        "caption": "Current field-platform prototype during outdoor hardware integration.",
+        "src": "assets/media/field-rover/prototype_front_rc22.jpg",
+        "caption": "Current field platform with GNSS antenna, onboard compute, sensing hardware, and the full wheel envelope visible.",
         "alt": "Front view of the current field rover prototype",
-        "layout": "portrait",
+        "layout": "screenfill",
         "placement": "overview"
       },
       {
         "type": "image",
-        "src": "assets/media/field-rover/prototype_overhead.jpg",
-        "caption": "Top-down view of the current prototype and onboard hardware packaging.",
+        "src": "assets/media/field-rover/prototype_overhead_cropped.jpg",
+        "caption": "Top-down hardware view showing the real packaging, wiring, GNSS, compute, and wheel-envelope constraints behind the platform architecture.",
         "alt": "Overhead view of the field rover prototype",
-        "layout": "portrait",
+        "layout": "compact",
         "placement": "validation"
       },
       {
         "type": "image",
         "src": "assets/media/field-rover/architecture.svg",
-        "caption": "The prototype is organized around reusable field evidence and a safety gate before powered mobility.",
+        "caption": "Validation architecture: field sensors feed observable Linux services and reusable evidence before powered mobility is introduced.",
         "alt": "Field rover system architecture diagram",
         "layout": "wide",
         "placement": "development"
       }
     ],
-    "hero": "assets/media/field-rover/prototype_front.jpg",
+    "hero": "assets/media/field-rover/prototype_front_rc22.jpg",
     "sectionTitles": {
       "overview": [
         "01 · Prototype strategy",
@@ -137,7 +137,51 @@
         "05 · Current state",
         "What is operational now"
       ]
-    }
+    },
+    "snapshot": [
+      [
+        "Compute",
+        "Raspberry Pi / Linux operational"
+      ],
+      [
+        "Evidence",
+        "Structured field capture implemented"
+      ],
+      [
+        "Mobility",
+        "Intentionally gated until sensing is reliable"
+      ]
+    ],
+    "ownershipBand": {
+      "owned": "System architecture · onboard Linux services · sensor integration · diagnostics · safety-state logic",
+      "team": "Field platform used to build reusable sensing and vision evidence for later autonomous operation"
+    },
+    "decisions": [
+      {
+        "decision": "Keep the current prototype human-powered",
+        "why": "Sensing, observability, and safety can be validated without propulsion adding another high-consequence failure source.",
+        "tradeoff": "The prototype does not yet demonstrate autonomous mobility.",
+        "evidence": "Camera capture, device mapping, health monitoring, diagnostics, and structured data capture are operational before the mobility gate is opened."
+      },
+      {
+        "decision": "Treat diagnostics as part of the product architecture",
+        "why": "Field robotics failures are expensive when the system cannot explain what went wrong after a run.",
+        "tradeoff": "More service and logging infrastructure before feature work appears visually impressive.",
+        "evidence": "Remote access, stable device mapping, health monitoring, and service-level diagnostics are already running on the prototype."
+      },
+      {
+        "decision": "Preserve raw field evidence",
+        "why": "Images and sensor data become more valuable when later algorithms can be re-run against the original source evidence.",
+        "tradeoff": "Higher storage and metadata discipline than a demo-only capture pipeline.",
+        "evidence": "Structured field capture records raw imagery and supporting session context rather than only processed outputs."
+      }
+    ],
+    "iteration": {
+      "observed": "Prototype progress was increasingly limited by whether field failures could be reproduced and diagnosed.",
+      "changed": "Capture, health checks, stable device identities, remote access, and diagnostics were promoted from helper scripts into the platform architecture.",
+      "verified": "The current cart can collect structured data while exposing the health of the services and devices responsible for that evidence."
+    },
+    "projectSummary": "A modular field robotics platform built to make sensor data trustworthy before autonomy depends on it. The current system combines geotagged sensing, observable Linux services, remote diagnostics, and safety-state logic in a reusable hardware/software testbed."
   },
   {
     "id": "aerospace",
@@ -157,8 +201,8 @@
       "50 V → 5 V / 40 W converter"
     ],
     "overview": [
-      "From January 2025 to June 2026, I served as Director of Electrical for the UBCO Aerospace Team. The 2026 competition mission was urban firefighting; the rules did not require a multi-aircraft solution.",
-      "Our team deliberately pursued a mothership architecture instead of the more conventional single-aircraft approach. That architectural choice became the defining innovation of the system and was recognized with the 2026 AEAC Innovation Award."
+      "From January 2025 to June 2026, I served as Director of Electrical for the UBCO Aerospace Team across two AEAC competition seasons.",
+      "The team finished 9th overall in 2025. For the 2026 urban-firefighting mission, the rules did not require multiple aircraft, but we deliberately chose a mothership architecture instead of the more conventional single-aircraft approach. That architectural decision became the defining innovation of the 2026 system and was recognized with the AEAC Innovation Award."
     ],
     "objectives": [
       "Create an electrical system that could support the team's mothership concept without making integration fragile.",
@@ -193,8 +237,8 @@
     "results": [
       "The mothership architecture received the 2026 AEAC Innovation Award.",
       "The team placed 6th overall at the 2026 AEAC competition.",
-      "The completed system integrated sensing, communications, power, and autonomy hardware into a competition-ready aircraft architecture.",
-      "The development process provided a repeatable interface and review structure for multidisciplinary integration."
+      "The competition aircraft integrated the required sensing, communications, power, and autonomy hardware into a working system.",
+      "The custom 50 V to 5 V, 40 W synchronous converter reached approximately 92% efficiency."
     ],
     "technologies": [
       "KiCad",
@@ -231,74 +275,90 @@
     "media": [
       {
         "type": "image",
-        "src": "assets/media/aerospace/aeac_team_innovation_award.jpg",
-        "caption": "UBCO Aerospace team with the 2026 AEAC Innovation Award.",
-        "alt": "UBCO Aerospace team with the Innovation Award",
-        "layout": "wide",
-        "placement": "validation"
-      },
-      {
-        "type": "image",
-        "src": "assets/media/aerospace/competition_aircraft_field.jpg",
-        "caption": "Competition aircraft during outdoor integration and field testing.",
+        "src": "assets/media/aerospace/competition_aircraft_field_crop15.jpg",
+        "caption": "2026 competition aircraft during outdoor integration.",
         "alt": "UBCO Aerospace competition aircraft in a field",
-        "layout": "portrait",
+        "layout": "screenfill",
         "placement": "overview"
       },
       {
         "type": "image",
         "src": "assets/media/aerospace/aircraft_sunset.jpg",
-        "caption": "One of the 2026 aircraft configurations during flight testing.",
+        "caption": "One of the 2026 aircraft configurations during flight testing; the project required electrical decisions to survive real vehicle packaging and integration constraints.",
         "alt": "UBCO Aerospace drone silhouetted at sunset",
-        "layout": "portrait",
-        "placement": "role"
+        "layout": "quadrant",
+        "placement": "development"
       },
       {
         "type": "image",
         "src": "assets/media/aerospace/water_cannon_flight.jpg",
-        "caption": "Water-cannon payload aircraft in flight.",
+        "caption": "Water-cannon payload aircraft in flight during mission-oriented testing.",
         "alt": "Aerial firefighting drone with water-cannon payload in flight",
-        "layout": "wide",
-        "placement": "overview"
+        "layout": "quadrant",
+        "placement": "development"
       },
       {
         "type": "video",
         "src": "assets/media/aerospace/competition_aircraft_flight.mp4",
         "poster": "assets/media/aerospace/competition_aircraft_flight_poster.jpg",
-        "caption": "Flight-test footage of the larger competition aircraft.",
-        "layout": "wide",
-        "placement": "development"
+        "caption": "Competition-aircraft flight testing. Playback starts at the first clean flight segment rather than the screen-recording lead-in.",
+        "layout": "quadrant",
+        "placement": "development",
+        "start": 8
       },
       {
         "type": "video",
         "src": "assets/media/aerospace/midair_drone_handling.mp4",
         "poster": "assets/media/aerospace/midair_drone_handling_poster.jpg",
-        "caption": "Mid-air drone handling / capture concept test.",
-        "layout": "wide",
-        "placement": "development"
+        "caption": "Mid-air handling/capture concept test associated with the mothership architecture; playback begins immediately before the useful interaction.",
+        "layout": "quadrant",
+        "placement": "development",
+        "start": 1
       },
       {
         "type": "image",
         "src": "assets/media/aerospace/architecture.svg",
-        "caption": "Mission-level view of the voluntary mothership design choice and the electrical architecture that enabled it.",
+        "caption": "System schematic showing the voluntary mothership architecture and the electrical subsystem boundaries it created.",
         "alt": "AEAC electrical architecture diagram",
         "layout": "wide",
         "placement": "objectives"
+      },
+      {
+        "type": "image",
+        "src": "assets/media/aerospace/competition_aircraft_flight_poster.jpg",
+        "placement": "development",
+        "caption": "Competition Aircraft Flight Poster",
+        "hidden": true
+      },
+      {
+        "type": "image",
+        "src": "assets/media/aerospace/midair_drone_handling_poster.jpg",
+        "placement": "validation",
+        "caption": "Midair Drone Handling Poster",
+        "hidden": true
+      },
+      {
+        "type": "image",
+        "src": "assets/media/aerospace/aeac_team_innovation_award.jpg",
+        "caption": "UBCO Aerospace after the mothership architecture was recognized with the 2026 AEAC Innovation Award.",
+        "alt": "UBCO Aerospace team with the Innovation Award",
+        "layout": "screenfill",
+        "placement": "validation"
       }
     ],
     "hero": "assets/media/aerospace/water_cannon_flight.jpg",
     "snapshot": [
       [
-        "Innovation",
-        "Mothership architecture"
+        "2025",
+        "9th overall"
+      ],
+      [
+        "2026",
+        "6th overall"
       ],
       [
         "Recognition",
         "2026 AEAC Innovation Award"
-      ],
-      [
-        "Competition",
-        "6th overall"
       ]
     ],
     "sectionTitles": {
@@ -322,7 +382,37 @@
         "05 · Competition evidence",
         "What the design produced"
       ]
-    }
+    },
+    "ownershipBand": {
+      "owned": "Electrical architecture · interface definition · electrical subteam leadership · power/sensing/comms integration",
+      "team": "Mothership firefighting architecture · 2026 AEAC Innovation Award · 6th overall"
+    },
+    "decisions": [
+      {
+        "decision": "Adopt the mothership architecture",
+        "why": "The mission did not require multiple aircraft; the team chose a different system architecture deliberately rather than treating the rules as the architecture.",
+        "tradeoff": "More interfaces and integration dependencies had to be made explicit across aircraft, sensing, communications, and autonomy.",
+        "evidence": "The architecture became the defining innovation recognized by the 2026 AEAC Innovation Award."
+      },
+      {
+        "decision": "Define interfaces before detailed subsystem integration",
+        "why": "Electrical, autonomy, software, sensing, and mechanical teams needed to progress in parallel without continuously invalidating one another.",
+        "tradeoff": "More up-front architecture and review work before hardware could be considered integration-ready.",
+        "evidence": "Subsystem readiness gates were used through the competition build and integration process."
+      },
+      {
+        "decision": "Use a custom high-voltage step-down stage",
+        "why": "The aircraft needed a compact regulated low-voltage rail from the main high-voltage system.",
+        "tradeoff": "Custom power electronics added design and validation work compared with buying a generic module.",
+        "evidence": "The completed 50 V to 5 V, 40 W synchronous converter reached approximately 92% efficiency."
+      }
+    ],
+    "iteration": {
+      "observed": "The mothership concept increased the number and importance of cross-team electrical/data interfaces.",
+      "changed": "Interfaces, review gates, and subsystem readiness were treated as first-class design work rather than late integration tasks.",
+      "verified": "The full competition system integrated power, sensing, communications, and autonomy hardware and reached the 2026 competition."
+    },
+    "projectSummary": "Electrical-system leadership across two AEAC competition seasons, culminating in a deliberately unconventional mothership architecture that placed 6th overall and won the 2026 AEAC Innovation Award."
   },
   {
     "id": "capstone",
@@ -342,13 +432,15 @@
       "Custom power PCB"
     ],
     "overview": [
-      "My UBC capstone team developed a distributed data-collection system intended for harsh mountain-resort deployment. Edge sensing nodes communicated over LoRa to a Linux gateway, spanning power electronics, sensing, wireless networking, enclosure constraints, and system-level validation."
+      "My UBC capstone team developed a low-cost distributed sensing system for mountain-resort deployment. The project combined anonymous skier-flow sensing, localized environmental data collection, long-range wireless networking, battery-powered edge nodes, and a centralized gateway/dashboard architecture.",
+      "The deployment problem was inherently geographic: sensing points were spread across a large mountain with limited power and network infrastructure. The conceptual-design work used Big White as the reference environment, including gateway-coverage studies, seasonal battery constraints, cold-weather operation, and Canadian 915 MHz wireless requirements."
     ],
     "objectives": [
-      "Operate remote sensing nodes under limited energy and harsh environmental constraints.",
-      "Move data reliably over long-range wireless links.",
-      "Protect batteries and electronics without making the field nodes difficult to service.",
-      "Demonstrate the entire path from physical sensing to a usable dashboard."
+      "Track skier movement anonymously so resorts could understand flow and occupancy without collecting personally identifying information.",
+      "Collect localized weather/environmental measurements from distributed points across the mountain.",
+      "Operate remote nodes through harsh seasonal conditions with battery replacement intervals practical for resort staff.",
+      "Maintain long-range communication across variable terrain while avoiding dependence on external network coverage.",
+      "Demonstrate the complete path from field sensing through the gateway to database/dashboard visualization."
     ],
     "role": [
       "Owned the node electrical design from battery assumptions through PCB implementation.",
@@ -358,20 +450,20 @@
     ],
     "process": [
       [
+        "Capability split",
+        "Used distributed nodes to support both anonymous skier-flow sensing and localized weather measurements across the resort."
+      ],
+      [
         "System partitioning",
-        "Used ESP32 edge nodes and a Linux gateway so sensing could remain distributed while analysis/visualization stayed centralized."
+        "Used ESP32 edge nodes and a Linux gateway so low-power sensing could remain distributed while storage and visualization stayed centralized."
       ],
       [
         "Node electronics",
         "Implemented power conversion, battery monitoring, and low-voltage protection on the custom node hardware."
       ],
       [
-        "Deployment constraints",
-        "Evaluated batteries, energy demand, enclosure needs, sensing options, and Canadian 915 MHz requirements together rather than independently."
-      ],
-      [
         "End-to-end test",
-        "Bench-tested the electronics, then validated communication and the complete sensor-to-dashboard data path."
+        "Bench-tested the electronics, then validated LoRa communication and the complete sensor-to-dashboard data path."
       ]
     ],
     "results": [
@@ -409,31 +501,56 @@
     "media": [
       {
         "type": "image",
+        "src": "assets/media/capstone/big-white-gateway-coverage.png",
+        "placement": "overview",
+        "layout": "screenfill",
+        "caption": "Big White deployment study from the conceptual design report, using 1 km gateway-coverage radii to reason about network placement across the resort."
+      },
+      {
+        "type": "image",
         "src": "assets/media/capstone/system-flow.png",
-        "caption": "Final prototype flow chart: sensing, LoRa transport, Linux gateway, backend storage, and Grafana visualization.",
+        "caption": "End-to-end project flow: sensing, LoRa transport, Linux gateway, backend storage, and Grafana visualization.",
         "alt": "Capstone final prototype flow chart",
-        "placement": "validation"
+        "placement": "validation",
+        "layout": "wide"
       },
       {
         "type": "image",
         "src": "assets/media/capstone/prototype.png",
-        "caption": "Sensor testing prototype and receiver node used during integration.",
+        "caption": "Sensor and receiver-node prototype used to validate the physical sensing and wireless path before treating the system as complete.",
         "alt": "Capstone sensor prototype and receiver node",
-        "placement": "overview"
+        "placement": "overview",
+        "layout": "compact"
       },
       {
         "type": "image",
         "src": "assets/media/capstone/pcb-schematic.png",
-        "caption": "Node PCB schematic.",
+        "caption": "Custom node schematic integrating the electrical functions required for a deployable remote sensing node.",
         "alt": "Capstone node PCB schematic",
-        "placement": "role"
+        "placement": "development",
+        "layout": "pair"
       },
       {
         "type": "image",
         "src": "assets/media/capstone/pcb-3d.png",
-        "caption": "3D model of the node PCB.",
+        "caption": "PCB model used to check the node electronics before assembly and bench validation.",
         "alt": "Capstone node PCB 3D model",
-        "placement": "development"
+        "placement": "development",
+        "layout": "pair"
+      },
+      {
+        "type": "image",
+        "src": "assets/media/capstone/battery-temperature-evidence.png",
+        "placement": "objectives",
+        "layout": "compact",
+        "caption": "Cold-temperature battery evidence used during concept development. Seasonal node life had to be sized around the severe capacity loss expected in ski-season temperatures."
+      },
+      {
+        "type": "image",
+        "src": "assets/media/capstone/concept-fmea.png",
+        "placement": "validation",
+        "layout": "wide",
+        "caption": "Concept-stage FMEA covering node power, wireless communication, environmental protection, gateway/data pipeline, schedule, component procurement, and team risks."
       }
     ],
     "hero": "assets/media/capstone/system-flow.png",
@@ -472,7 +589,37 @@
         "05 · End-to-end validation",
         "From field node to dashboard"
       ]
-    }
+    },
+    "ownershipBand": {
+      "owned": "Node power architecture · custom PCB schematic/layout · battery/component selection · LoRa/sensor hardware research",
+      "team": ">500 m outdoor LoRa link · end-to-end sensing-to-dashboard demonstration"
+    },
+    "decisions": [
+      {
+        "decision": "Measure skier flow without identifying skiers",
+        "why": "The useful resort metric was movement and occupancy, not personal identity. ToF/mmWave sensing allowed the system to focus on anonymous physical presence and motion.",
+        "tradeoff": "Anonymous sensing provides less person-specific information than camera/identity-based tracking, but substantially reduces privacy exposure.",
+        "evidence": "The sensing architecture was designed around anonymous skier-flow measurement while sharing the same distributed LoRa infrastructure with the weather nodes."
+      },
+      {
+        "decision": "Partition sensing into ESP32 edge nodes plus a Linux gateway",
+        "why": "Remote sensing needed low-power distributed hardware while storage and visualization benefited from a more capable central system.",
+        "tradeoff": "The wireless boundary became a reliability and protocol interface that had to be validated explicitly.",
+        "evidence": "The final system demonstrated more than 500 m outdoor LoRa communication and a complete sensor-to-dashboard path."
+      },
+      {
+        "decision": "Put battery supervision into the node electronics",
+        "why": "Field nodes needed to protect their energy source without relying on an operator being present.",
+        "tradeoff": "More PCB complexity and bench validation.",
+        "evidence": "The custom PCB integrated power conversion, battery monitoring, and low-voltage protection and was assembled and bench tested."
+      }
+    ],
+    "iteration": {
+      "observed": "A working sensor alone did not prove the system; power, radio range, gateway ingestion, storage, and visualization all had to work together.",
+      "changed": "Validation shifted from isolated node tests to the complete sensing-to-dashboard path.",
+      "verified": "Outdoor LoRa exceeded 500 m and the end-to-end data path was demonstrated."
+    },
+    "projectSummary": "A distributed mountain-resort sensing system for anonymous skier-flow tracking and localized weather collection using low-power ESP32 nodes, LoRa networking, ToF/mmWave sensing, custom power electronics, and a Linux gateway."
   },
   {
     "id": "fpv-frame",
@@ -492,41 +639,46 @@
       "Carbon fiber + aluminum"
     ],
     "overview": [
-      "After an FPV crash broke an arm on an existing frame, I used the failure as the starting point for a redesign around component packaging, center-of-mass placement, crash behavior, repairability, and a smaller footprint.",
-      "The project was less about producing a visually different frame and more about changing how the aircraft handled failure. The design explored intentional mechanical failure points so crash behavior could be more predictable instead of allowing damage to propagate arbitrarily through the assembly."
+      "The project started with an off-the-shelf 5-inch FPV frame, not a clean-sheet custom design. Two major crashes exposed different weaknesses and drove two separate engineering responses.",
+      "The first failure followed a failed dive: an arm tore off and the motor wiring pulled hard enough on the electronics to rip copper traces from the ESC. Rather than adding a heavy bracket or strain-relief assembly, I rerouted the motor wires around a flight-controller standoff so crash loads were reacted mechanically before reaching the PCB.",
+      "A second major crash broke an arm again. By then I also wanted to carry a GoPro Session 5. That combination drove the full frame redesign: raise the arms around the central body, improve component protection and packaging, and create a geometry better suited to protecting the camera during impacts."
     ],
     "objectives": [
-      "Use the previous crash to decide what should fail, what should survive, and what should be easy to replace.",
-      "Improve mass distribution and component packaging without growing the frame.",
-      "Prototype structural and packaging changes cheaply before committing to carbon fiber and aluminum."
+      "Prevent arm-separation loads from being transferred directly into ESC/PCB traces.",
+      "Keep the first wiring fix extremely light and simple enough for an FPV aircraft.",
+      "Redesign the frame after the second critical crash rather than continuing to repair the off-the-shelf architecture.",
+      "Protect a GoPro Session 5 by bringing the arms upward around the central package.",
+      "Improve component packaging, center of mass, footprint, repairability, and crash behavior before manufacturing the final carbon-fiber/aluminum version."
     ],
     "role": [
-      "Owned the frame geometry and component packaging.",
-      "Ran the rapid-prototyping loop from CAD through printed fit checks.",
-      "Prepared the design for final carbon-fiber/aluminum manufacture.",
-      "Integrated the electronics into the revised packaging."
+      "Diagnosed crash-load paths from two critical failures of the original off-the-shelf frame.",
+      "Developed the standoff-based motor-wire strain-relief routing after the first crash.",
+      "Owned the custom SolidWorks frame geometry and GoPro Session 5 packaging concept after the second crash.",
+      "Ran printed fit/prototype iterations before final carbon-fiber/aluminum manufacture.",
+      "Integrated and validated the electronics in the revised frame."
     ],
     "process": [
       [
-        "Crash as evidence",
-        "Treated the broken arm as a load-path and serviceability problem rather than simply reproducing the old geometry."
+        "Crash 1 — trace damage",
+        "Failed dive → arm separation → motor-wire tension → ESC copper traces damaged."
       ],
       [
-        "Packaging study",
-        "Repositioned the battery and electronics while tightening the footprint and improving mass distribution."
+        "Lightweight strain relief",
+        "Wrapped/routed the motor wires around a flight-controller standoff so impact tension was reacted mechanically before reaching the PCB."
       ],
       [
-        "Controlled failure",
-        "Explored intentional sacrificial features so future crash energy would be more likely to damage replaceable parts instead of propagating unpredictably."
+        "Crash 2 — redesign trigger",
+        "A later critical crash broke an arm again; recurring arm failure plus the desire to carry a GoPro Session 5 justified a full frame redesign."
       ],
       [
-        "Material transition",
-        "Used printed prototypes to verify fit and geometry before moving to the final carbon-fiber/aluminum parts."
+        "Custom architecture",
+        "Raised the arms around the central package, revised battery/electronics packaging, and iterated the geometry using printed prototypes before final manufacture."
       ]
     ],
     "results": [
-      "Completed the final frame in 2024.",
-      "Continued flight/crash testing informed future modification ideas."
+      "The first crash produced a lightweight wiring/strain-relief solution that reduced direct PCB loading from motor-wire tension.",
+      "The second crash triggered a full custom-frame redesign instead of another off-the-shelf repair.",
+      "The final frame incorporated raised-arm geometry, revised component packaging, and GoPro Session 5 protection into carbon-fiber/aluminum hardware."
     ],
     "technologies": [
       "SolidWorks",
@@ -557,23 +709,26 @@
       {
         "type": "image",
         "src": "assets/media/fpv-frame/final-frame.png",
-        "caption": "Completed carbon-fiber / aluminum frame and integrated aircraft.",
+        "caption": "Final custom-frame configuration after the two crash-driven design cycles.",
         "alt": "Completed custom FPV drone frame",
-        "placement": "validation"
+        "placement": "validation",
+        "layout": "screenfill"
       },
       {
         "type": "image",
         "src": "assets/media/fpv-frame/wiring.png",
-        "caption": "Electronics packaging and internal wiring during integration.",
+        "caption": "Electronics integration and motor-wire routing inside the frame; the first crash had shown why wire load paths mattered to PCB survival.",
         "alt": "FPV drone frame internal wiring",
-        "placement": "development"
+        "placement": "overview",
+        "layout": "screenfill"
       },
       {
         "type": "image",
         "src": "assets/media/fpv-frame/prototype.jpg",
-        "caption": "Earlier frame geometry and rapid-prototype iterations.",
+        "caption": "Printed prototype iterations used to evaluate the raised-arm geometry, component packaging, and camera-protection concept before final manufacture.",
         "alt": "FPV drone frame prototype progression",
-        "placement": "overview"
+        "placement": "development",
+        "layout": "screenfill"
       }
     ],
     "hero": "assets/media/fpv-frame/final-frame.png",
@@ -598,7 +753,55 @@
         "05 · Final hardware",
         "What the redesign changed"
       ]
-    }
+    },
+    "snapshot": [
+      [
+        "Design trigger",
+        "Crash failure"
+      ],
+      [
+        "Final structure",
+        "Carbon fiber / aluminum"
+      ],
+      [
+        "Focus",
+        "Packaging + sacrificial failure behavior"
+      ]
+    ],
+    "decisions": [
+      {
+        "decision": "Route motor wires around a flight-controller standoff",
+        "why": "The first crash tore an arm away and the attached motor wires transferred the load into the ESC hard enough to rip PCB traces.",
+        "tradeoff": "The routing had to provide useful strain relief without adding a bulky guard, bracket, or meaningful mass.",
+        "evidence": "The revised routing created a mechanical load path around the standoff so the PCB was no longer the first structure reacting motor-wire tension."
+      },
+      {
+        "decision": "Stop repairing the off-the-shelf frame and redesign the architecture",
+        "why": "A second critical crash broke another arm, showing that the recurring structural failure was worth addressing at the frame level rather than through repeated replacement.",
+        "tradeoff": "A clean-sheet frame required CAD, prototyping, electronics repackaging, and final-part manufacture instead of simply buying another arm.",
+        "evidence": "The redesign progressed through printed prototypes into final carbon-fiber/aluminum components."
+      },
+      {
+        "decision": "Raise the arms around the center package",
+        "why": "The new frame also needed to carry and better protect a GoPro Session 5 during impacts.",
+        "tradeoff": "Arm elevation changed packaging, geometry, structural load paths, and component clearances and therefore had to be validated as a complete system.",
+        "evidence": "The raised-arm concept became a defining feature of the final custom frame geometry."
+      }
+    ],
+    "iteration": {
+      "observed": "Crash 1 showed that a broken arm could destroy electronics through the motor-wire load path; Crash 2 showed the off-the-shelf frame itself had become the recurring limitation.",
+      "changed": "First, the wiring path was strain-relieved around a flight-controller standoff. Later, the frame architecture was redesigned with raised arms, revised packaging, and GoPro Session 5 protection as explicit requirements.",
+      "verified": "The custom design moved through CAD and printed prototypes into final carbon-fiber/aluminum hardware and subsequent flight/crash use."
+    },
+    "projectSummary": "A custom FPV frame redesign driven by two critical crash failures on an off-the-shelf frame: first to eliminate ESC/PCB stress with almost no weight penalty, then to protect a GoPro Session 5 and improve crash behavior through a new raised-arm architecture.",
+    "missingPreferredMedia": [
+      {
+        "description": "SolidWorks / CAD model spin video",
+        "preferredPlacement": "overview",
+        "preferredOrder": 0,
+        "status": "source file not present in accessible portfolio/media uploads"
+      }
+    ]
   },
   {
     "id": "fpv-drones",
@@ -680,14 +883,14 @@
       {
         "type": "image",
         "src": "assets/media/fpv-drones/5-inch.jpg",
-        "caption": "Original 5-inch aircraft and early flight setup.",
+        "caption": "5-inch aircraft built from separately selected propulsion, flight-control, radio, and FPV components; later documented at 90+ km/h.",
         "alt": "5 inch FPV drone",
         "placement": "overview"
       },
       {
         "type": "image",
         "src": "assets/media/fpv-drones/3-inch.jpg",
-        "caption": "Smaller 3-inch aircraft developed around the sub-250 g constraint.",
+        "caption": "3-inch aircraft developed around a sub-250 g mass constraint while retaining a complete FPV/control system.",
         "alt": "3 inch FPV drone",
         "placement": "validation"
       }
@@ -714,7 +917,21 @@
         "05 · Flight validation",
         "Working systems under real constraints"
       ]
-    }
+    },
+    "snapshot": [
+      [
+        "Small platform",
+        "Sub-250 g"
+      ],
+      [
+        "Large platform",
+        "90+ km/h documented"
+      ],
+      [
+        "Scope",
+        "Built from discrete components"
+      ]
+    ]
   },
   {
     "id": "bldc",
@@ -767,9 +984,8 @@
       ]
     ],
     "results": [
-      "Successfully ran the custom motor and drove the geared scissor mechanism.",
-      "Physical testing exposed PLA thermal deformation and rotor-stability limits that would drive the next structural revision.",
-      "Received a documented project grade of 100%."
+      "The custom axial-flux motor ran and drove the geared scissor mechanism.",
+      "Load testing exposed PLA thermal deformation and rotor-stability limits that define the next structural revision."
     ],
     "technologies": [
       "SolidWorks",
@@ -802,14 +1018,14 @@
         "type": "image",
         "src": "assets/media/bldc/iteration-architecture.svg",
         "placement": "development",
-        "caption": "Layered axial-flux architecture: stable interfaces let rotor, coils, structure, and load be revised with less collateral redesign."
+        "caption": "Simplified side-view schematic showing the axial-flux stack and the structural failure boundary exposed during V1 testing."
       },
       {
         "type": "image",
         "src": "assets/media/bldc/motor-build.jpg",
-        "caption": "Axial-flux motor, test hardware, and additive-manufacturing process.",
+        "caption": "Physical motor/test hardware — the project progressed beyond CAD into wound coils, assembled hardware, and load testing.",
         "alt": "Axial flux BLDC motor build",
-        "placement": "validation"
+        "placement": "overview"
       }
     ],
     "hero": "assets/media/bldc/motor-build.jpg",
@@ -834,6 +1050,43 @@
         "05 · Failure and validation",
         "What ran, what failed, and what V1 taught"
       ]
+    },
+    "snapshot": [
+      [
+        "Architecture",
+        "Axial-flux"
+      ],
+      [
+        "Load test",
+        "Geared scissor mechanism driven"
+      ],
+      [
+        "Failure found",
+        "PLA thermal deformation"
+      ]
+    ],
+    "ownershipBand": {
+      "owned": "Motor architecture · CAD/mechanical design · coil geometry/winding · fabrication · test troubleshooting",
+      "team": "Functional custom motor and geared cutting mechanism"
+    },
+    "decisions": [
+      {
+        "decision": "Use axial flux instead of a conventional radial layout",
+        "why": "The layered geometry made rotor, coils, air gap, and structure easier to revise as separate interfaces during a fast prototype cycle.",
+        "tradeoff": "Rotor support, air-gap control, and thermal structure became more demanding.",
+        "evidence": "The motor ran under mechanical load, and V1 testing exposed exactly those structural/thermal limits."
+      },
+      {
+        "decision": "Test against the real mechanism",
+        "why": "A spinning unloaded motor would not reveal whether the design could transfer useful work into the geared scissors.",
+        "tradeoff": "Mechanical loading increased the chance of exposing prototype weaknesses early.",
+        "evidence": "The custom motor successfully drove the geared scissor mechanism before thermal deformation became the next design constraint."
+      }
+    ],
+    "iteration": {
+      "observed": "The motor could produce useful motion, but the printed structure softened under thermal/mechanical load and rotor stability remained a limit.",
+      "changed": "The next revision would preserve the layered electromagnetic concept while changing structural/material choices around the rotor and stator interfaces.",
+      "verified": "The first build reached the point of driving the intended mechanism, giving a concrete failure boundary rather than a purely simulated design."
     }
   },
   {
@@ -920,14 +1173,14 @@
       {
         "type": "image",
         "src": "assets/media/printer/final-printer.png",
-        "caption": "Completed upgraded printer showing the dual-Z and rebuilt mechanical package.",
+        "caption": "Final upgraded machine showing the rebuilt mechanical package, including dual-Z and structural changes.",
         "alt": "Completed custom upgraded 3D printer",
         "placement": "validation"
       },
       {
         "type": "image",
         "src": "assets/media/printer/original-printer.jpg",
-        "caption": "Earlier printer configuration and baseline hardware.",
+        "caption": "Baseline Ender 3 Pro configuration used as the reference before the electrical and mechanical retrofit.",
         "alt": "Original Ender 3 Pro configuration",
         "placement": "overview"
       }
@@ -954,6 +1207,25 @@
         "05 · Before / after",
         "What changed in the final machine"
       ]
+    },
+    "snapshot": [
+      [
+        "Mechanical",
+        "Dual-Z + structural bracing"
+      ],
+      [
+        "Electrical",
+        "Controls/wiring rebuilt"
+      ],
+      [
+        "Method",
+        "Baseline → retrofit → recalibration"
+      ]
+    ],
+    "iteration": {
+      "observed": "Capability upgrades were exposing alignment, structural, wiring, and serviceability limitations in the baseline machine.",
+      "changed": "The machine was rebuilt as coupled electrical/mechanical subsystems instead of accumulating isolated modifications.",
+      "verified": "The upgraded printer was recalibrated after the hardware changes and returned to operation with broader capability and improved service access."
     }
   },
   {
@@ -1006,9 +1278,8 @@
       ]
     ],
     "results": [
-      "The car successfully followed the path.",
-      "Selected model achieved MSE 9.9 and R² 97.03%.",
-      "Received a documented grade of 93%."
+      "The selected model achieved MSE 9.9 and R² 97.03%.",
+      "The completed Raspberry Pi car successfully followed the curved track in physical testing."
     ],
     "technologies": [
       "Raspberry Pi",
@@ -1039,7 +1310,7 @@
         "type": "image",
         "src": "assets/media/self-driving/system-loop.svg",
         "placement": "development",
-        "caption": "The model was selected with numerical metrics, then validated as a closed loop on the physical car."
+        "caption": "Closed-loop system schematic showing how model selection feeds into physical steering validation."
       }
     ],
     "snapshot": [
@@ -1077,7 +1348,25 @@
         "05 · Model + hardware evidence",
         "Metrics only mattered if the car could follow the track"
       ]
-    }
+    },
+    "ownershipBand": {
+      "owned": "Python/control development · neural-network work · Raspberry Pi/camera integration · physical validation",
+      "team": "Camera-based model car that followed the curved track"
+    },
+    "decisions": [
+      {
+        "decision": "Compare candidate networks before choosing one",
+        "why": "The first model was not assumed to be good enough simply because it trained successfully.",
+        "tradeoff": "More experimentation and evaluation work before physical testing.",
+        "evidence": "The selected model achieved MSE 9.9 and R² 97.03%."
+      },
+      {
+        "decision": "Use the physical track as the final gate",
+        "why": "Offline metrics only matter if prediction quality survives the closed-loop interaction between camera, model, steering, and vehicle motion.",
+        "tradeoff": "Physical validation introduced real camera and vehicle behavior that the model metrics alone could not capture.",
+        "evidence": "The completed car successfully followed the curved track."
+      }
+    ]
   },
   {
     "id": "guitar",
@@ -1128,8 +1417,7 @@
       ]
     ],
     "results": [
-      "Reduced final tone-amplitude variance to 1.2%.",
-      "Received a documented grade of 98%."
+      "The final processing pipeline reduced tone-amplitude variance to 1.2%."
     ],
     "technologies": [
       "MATLAB",
@@ -1160,9 +1448,9 @@
       {
         "type": "image",
         "src": "assets/media/guitar/signal-spectrum.jpg",
-        "caption": "Unfiltered spectrum, filtered spectrum, and time-domain signal from the MATLAB project.",
+        "caption": "Project spectrum evidence: unfiltered signal, isolated frequency content, and reconstructed time-domain output.",
         "alt": "Guitar signal filtering plots",
-        "placement": "validation"
+        "placement": "overview"
       }
     ],
     "hero": "assets/media/guitar/signal-spectrum.jpg",
@@ -1187,7 +1475,21 @@
         "05 · Quantitative result",
         "Tone balance after processing"
       ]
-    }
+    },
+    "snapshot": [
+      [
+        "Signal domain",
+        "Frequency-domain processing"
+      ],
+      [
+        "Measured result",
+        "1.2% final tone-amplitude variance"
+      ],
+      [
+        "Tools",
+        "MATLAB"
+      ]
+    ]
   },
   {
     "id": "motorsports",
@@ -1271,14 +1573,14 @@
       {
         "type": "image",
         "src": "assets/media/motorsports/chassis.jpg",
-        "caption": "Formula Student chassis during the build.",
+        "caption": "Formula Student chassis during the build — electrical routing and packaging had to fit around a real multidisciplinary vehicle.",
         "alt": "UBCO Motorsports chassis",
         "placement": "overview"
       },
       {
         "type": "image",
         "src": "assets/media/motorsports/finished-car.jpg",
-        "caption": "Completed competition vehicle.",
+        "caption": "Completed competition vehicle that competed in Virginia in summer 2022.",
         "alt": "UBCO Motorsports finished racecar",
         "placement": "validation"
       }
@@ -1305,7 +1607,21 @@
         "05 · Competition outcome",
         "Completed vehicle and practical lessons"
       ]
-    }
+    },
+    "snapshot": [
+      [
+        "Environment",
+        "Formula Student racecar"
+      ],
+      [
+        "Contribution",
+        "Harness / ECU / radio packaging"
+      ],
+      [
+        "Validation",
+        "Vehicle competed in Virginia"
+      ]
+    ]
   },
   {
     "id": "space-station",
@@ -1358,8 +1674,7 @@
     ],
     "results": [
       "Ranked in the top 10 of the class.",
-      "Received a documented grade of 96%.",
-      "Portfolio records the highest SolidWorks part count among groups."
+      "The project provided early experience coordinating a large shared CAD assembly across a remote team."
     ],
     "technologies": [
       "SolidWorks",
@@ -1389,7 +1704,7 @@
       {
         "type": "image",
         "src": "assets/media/space-station/station.jpg",
-        "caption": "SolidWorks assembly views of the interplanetary transport concept.",
+        "caption": "First-year SolidWorks assembly project retained as earlier work to show progression in CAD and team-integration experience.",
         "alt": "SolidWorks space station assembly",
         "placement": "overview"
       }

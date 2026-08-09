@@ -1,5 +1,5 @@
 const esc=s=>String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]));
-Promise.all([fetch('data/projects.json?v=rc16').then(r=>r.json()),fetch('data/site.json?v=rc16').then(r=>r.json())]).then(([projects,site])=>{
+Promise.all([fetch('data/projects.json?v=rc22').then(r=>r.json()),fetch('data/site.json?v=rc22').then(r=>r.json())]).then(([projects,site])=>{
   const featured=projects.filter(p=>p.featured).slice(0,3);
   const featuredEl=document.querySelector('#featured-projects');
   featuredEl.innerHTML=featured.map(p=>`
