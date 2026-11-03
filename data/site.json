@@ -1,27 +1,72 @@
 {
-  "name": "Ryan Collins",
-  "title": "Electrical / Controls EIT",
-  "location": "Kelowna, BC",
-  "email": "rylcollins@gmail.com",
-  "phone": "(778) 538-2064",
-  "experience": [
-    {
-      "company": "SKYTRAC Systems",
-      "role": "DAO Engineering Co-op",
-      "dates": "May 2026 \u2013 Present",
-      "summary": "Avionics installation, configuration-controlled documentation, ECO/FAI support, certification records, and AI-assisted engineering workflows."
-    },
-    {
-      "company": "4AG Robotics",
-      "role": "Mechatronics Co-op Student",
-      "dates": "2024 & 2025",
-      "summary": "Robot electrical design, PLC/HMI programming, SCARA wiring documentation, commissioning, customer-site upgrades, and troubleshooting."
-    },
-    {
-      "company": "Wexxar Bel",
-      "role": "Electrical Co-op Student",
-      "dates": "2023",
-      "summary": "Machine schematics, UL electrical checks, PLC uploads, and an R&D actuator lifecycle test station."
-    }
-  ]
+ "name": "Ryan Collins",
+ "title": "Founder, Iron Leaf Robotics · Electrical / Controls EIT",
+ "location": "Kelowna, BC",
+ "email": "rylcollins@gmail.com",
+ "phone": "(778) 538-2064",
+ "experience": [
+  {
+   "company": "Iron Leaf Robotics Inc.",
+   "role": "Founder",
+   "dates": "May 2026 – Present",
+   "summary": "Full-time since Oct 2026. Ground-sensing cart for orchards and vineyards: hardware, software, data, prototype models, grower interviews and demos on five farms.",
+   "href": "https://www.ironleafrobotics.ca/"
+  },
+  {
+   "company": "SKYTRAC Systems",
+   "role": "DAO Engineering Co-op",
+   "dates": "May – Aug 2026",
+   "summary": "Avionics installation, configuration-controlled documentation, ECO/FAI support, certification records, and AI-assisted engineering workflows."
+  },
+  {
+   "company": "4AG Robotics",
+   "role": "Mechatronics Co-op Student",
+   "dates": "2024 & 2025",
+   "summary": "Robot electrical design, PLC/HMI programming, SCARA wiring documentation, commissioning, customer-site upgrades, and troubleshooting."
+  },
+  {
+   "company": "Wexxar Bel",
+   "role": "Electrical Co-op Student",
+   "dates": "2023",
+   "summary": "Machine schematics, UL electrical checks, PLC uploads, and an R&D actuator lifecycle test station."
+  }
+ ],
+ "now": {
+  "kicker": "Now · Iron Leaf Robotics",
+  "title": "Building ground-sensing robots for orchards and vineyards.",
+  "body": "Full-time since October 2026. The first platform is a human-pushed sensing cart that records every row and turns a field visit into a human-checked report of gopher activity and irrigation stakes.",
+  "stats": [
+   [
+    "5",
+    "farms demoed, fall 2026"
+   ],
+   [
+    "8",
+    "grower interviews"
+   ],
+   [
+    "~171k",
+    "camera frames in the first five runs"
+   ],
+   [
+    "1",
+    "non-binding 2027 pilot LOI"
+   ]
+  ],
+  "links": [
+   {
+    "label": "Read the case study",
+    "href": "project.html?id=iron-leaf",
+    "primary": true
+   },
+   {
+    "label": "ironleafrobotics.ca",
+    "href": "https://www.ironleafrobotics.ca/"
+   }
+  ],
+  "video": {
+   "src": "assets/media/iron-leaf/field-silhouette.mp4",
+   "poster": "assets/media/iron-leaf/field-silhouette.webp"
+  }
+ }
 }

@@ -3,26 +3,40 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Project | Ryan Collins</title>
+  <meta name="theme-color" content="#0A1510">
+  <title>Case study | Ryan Collins</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="assets/styles.css">
-  <link rel="stylesheet" href="portfolio-rc22.css?v=rc22">
+  <link rel="preload" href="assets/fonts/archivo-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/site.css?v=rc23">
 </head>
 <body>
-<header class="site-header">
-  <div class="shell header-inner">
-    <a class="wordmark" href="index.html">Ryan Collins</a>
-    <nav class="main-nav" aria-label="Primary">
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav" aria-label="Site">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="Ryan Collins, home"><span class="mark">RC</span>Ryan Collins</a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
+    <nav class="nav-links" id="nav-links" aria-label="Primary">
+      <a href="index.html#now">Iron Leaf</a>
       <a href="index.html#projects">Projects</a>
+      <a href="index.html#experience">Experience</a>
+      <a href="index.html#about">About</a>
+      <a class="cta" href="index.html#contact">Contact</a>
     </nav>
   </div>
 </header>
-<main id="project-root"></main>
-<footer class="site-footer">
-  <div class="shell footer-inner">
-    <a href="index.html#projects">Back to projects &rarr;</a>
+<main id="main"></main>
+<footer>
+  <div class="wrap">
+    <div class="top">
+      <div><h4>Ryan Collins</h4><p>Founder, Iron Leaf Robotics &middot; Electrical / Controls EIT &middot; Kelowna, BC</p></div>
+      <div><h4>Site</h4><ul><li><a href="index.html#projects">Projects</a></li><li><a href="index.html#experience">Experience</a></li><li><a href="index.html#about">About</a></li></ul></div>
+      <div><h4>Iron Leaf</h4><ul><li><a href="project.html?id=iron-leaf">Case study</a></li><li><a href="https://www.ironleafrobotics.ca/">ironleafrobotics.ca</a></li></ul></div>
+    </div>
+    <svg class="wordmark" viewBox="0 0 1000 110" aria-hidden="true"><text x="0" y="92" textLength="1000" lengthAdjust="spacingAndGlyphs">RYAN COLLINS</text></svg>
+    <div class="bottom"><span>&copy; <span data-year>2026</span> Ryan Collins</span><a href="index.html#projects">Back to projects &rarr;</a></div>
   </div>
 </footer>
-<script src="assets/project.js?v=rc22"></script>
+<script src="assets/ui.js?v=rc23"></script>
+<script src="assets/project.js?v=rc23"></script>
 </body>
 </html>

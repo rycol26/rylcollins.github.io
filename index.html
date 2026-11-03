@@ -3,89 +3,150 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Ryan Collins - Electrical / Controls EIT portfolio">
-  <title>Ryan Collins | Electrical / Controls EIT</title>
+  <meta name="description" content="Ryan Collins: founder of Iron Leaf Robotics and Electrical / Controls EIT in Kelowna, BC. Robotics, controls, embedded systems and field computer vision.">
+  <meta name="theme-color" content="#0A1510">
+  <meta property="og:title" content="Ryan Collins | Founder, Iron Leaf Robotics">
+  <meta property="og:description" content="Electrical engineering, robotics, controls and embedded systems. Building ground-sensing robots for orchards and vineyards.">
+  <meta property="og:image" content="assets/media/iron-leaf/field-silhouette.webp">
+  <title>Ryan Collins | Founder, Iron Leaf Robotics</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="assets/styles.css">
-  <link rel="stylesheet" href="portfolio-rc22.css?v=rc22">
+  <link rel="preload" href="assets/fonts/archivo-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/site.css?v=rc23">
 </head>
 <body>
-<header class="site-header">
-  <div class="shell header-inner">
-    <a class="wordmark" href="index.html">Ryan Collins</a>
-    <nav class="main-nav" aria-label="Primary">
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav" aria-label="Site">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="Ryan Collins, home"><span class="mark">RC</span>Ryan Collins</a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
+    <nav class="nav-links" id="nav-links" aria-label="Primary">
+      <a href="#now">Iron Leaf</a>
       <a href="#projects">Projects</a>
       <a href="#experience">Experience</a>
       <a href="#about">About</a>
+      <a class="cta" href="#contact">Contact</a>
     </nav>
   </div>
 </header>
 
-<main>
-  <section class="intro shell">
-    <div class="intro-label">Electrical / Controls EIT &middot; Kelowna, BC</div>
-    <div class="intro-grid">
-      <h1>Electrical engineering, robotics, controls, and embedded systems.</h1>
-      <div class="intro-copy">
-        <p>Exploring robotic systems to find value in the gaps between disciplines, industries, and established ways of solving problems.</p>
+<main id="main">
+  <section class="hero" id="top" aria-labelledby="hero-title">
+    <div class="media grain">
+      <video muted loop playsinline preload="metadata" poster="assets/media/iron-leaf/field-silhouette.webp" data-auto aria-label="The Iron Leaf sensing cart in an autumn vineyard row">
+        <source src="assets/media/iron-leaf/field-silhouette.mp4" type="video/mp4">
+      </video>
+      <span class="vf" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+      <button class="video-toggle" type="button" data-toggle>Pause video</button>
+    </div>
+    <div class="wrap">
+      <p class="eyebrow">Founder, Iron Leaf Robotics &middot; Electrical / Controls EIT &middot; Kelowna, BC</p>
+      <h1 id="hero-title">
+        <span class="line-mask" style="--i:0"><span>Electrical engineering,</span></span>
+        <span class="line-mask" style="--i:1"><span>robotics, controls and</span></span>
+        <span class="line-mask" style="--i:2"><span><em>embedded systems.</em></span></span>
+      </h1>
+      <p class="lead reveal" style="--i:3">I'm Ryan Collins. I founded Iron Leaf Robotics to build ground-sensing robots for orchards and vineyards, and I look for value in the gaps between disciplines, industries and established ways of solving problems.</p>
+      <div class="actions reveal" style="--i:4">
+        <a class="btn primary" href="project.html?id=iron-leaf">Iron Leaf case study <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a class="btn ghost" href="#projects">All projects</a>
+      </div>
+      <div class="hero-meta reveal" style="--i:5">
+        <span class="chip mint live"><span class="dot"></span>Full-time on Iron Leaf since Oct 2026</span>
+        <span class="chip">BASc Electrical (Mechatronics), UBC Okanagan 2026</span>
+        <span class="chip">EIT, Engineers and Geoscientists BC</span>
       </div>
     </div>
   </section>
 
-  <section id="projects" class="section shell">
-    <div class="section-title-row">
-      <div>
-        <div class="section-kicker">Projects</div>
-        <h2>Systems built, tested, and iterated</h2>
-      </div>
-      <p>Case studies focus on what I was responsible for, how the design evolved, what was tested, and what the evidence supports.</p>
-    </div>
-
-    <div id="featured-projects" class="featured-projects"></div>
-
-    <div class="all-projects-head">
-      <h3>All projects</h3>
-      <div id="filters" class="filters" aria-label="Project filters"></div>
-    </div>
-    <div id="project-list" class="project-list"></div>
+  <section id="now" class="band" aria-labelledby="now-title">
+    <div class="wrap now-grid" id="now-root"></div>
   </section>
 
-  <section id="experience" class="section section-alt">
-    <div class="shell">
-      <div class="section-title-row">
+  <section id="projects" aria-labelledby="projects-title">
+    <div class="wrap">
+      <div class="section-head">
         <div>
-          <div class="section-kicker">Experience</div>
-          <h2>Technical work experience</h2>
+          <p class="eyebrow reveal"><span class="num">02</span>Projects</p>
+          <h2 id="projects-title" class="reveal" style="--i:1">Systems built, tested and <em>iterated.</em></h2>
         </div>
-        <p>Industrial robotics, automation machinery, commissioning, and regulated aerospace engineering.</p>
+        <p class="lead reveal" style="--i:2">Case studies focus on what I was responsible for, how the design evolved, what was tested and what the evidence supports.</p>
       </div>
-      <div id="experience-list" class="experience-list"></div>
+      <div class="featured" id="featured"></div>
+      <div class="index-head">
+        <h3>All projects</h3>
+        <div class="filters" id="filters" role="group" aria-label="Filter projects"></div>
+      </div>
+      <div class="rows" id="rows"></div>
     </div>
   </section>
 
-  <section id="about" class="section shell about">
-    <div class="about-heading">
-      <div class="section-kicker">About</div>
-      <h2>The first workable answer should rarely be treated as the final one.</h2>
+  <section id="experience" class="band" aria-labelledby="exp-title">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow reveal"><span class="num">03</span>Experience</p>
+          <h2 id="exp-title" class="reveal" style="--i:1">Technical work experience</h2>
+        </div>
+        <p class="lead reveal" style="--i:2">Field robotics, industrial robotics, automation machinery, commissioning and regulated aerospace engineering.</p>
+      </div>
+      <div class="timeline" id="timeline"></div>
     </div>
-    <div class="about-copy">
-      <div class="about-rule"></div>
+  </section>
 
-      <p>Most engineering problems already have an obvious path: the established architecture, the familiar product category, or the solution the industry has converged on. Understanding that answer matters. Understanding how and why it became the status quo matters more. But the most interesting question is what happens when the problem is viewed from a slightly different angle? Features, constraints, or unsolved problems that were previously orthogonal to the original vision can suddenly become visible.</p>
+  <section id="about" aria-labelledby="about-title">
+    <div class="wrap about-grid">
+      <div>
+        <p class="eyebrow reveal"><span class="num">04</span>About</p>
+        <h2 id="about-title" class="reveal" style="--i:1">The first workable answer should rarely be treated as the <em>final one.</em></h2>
+      </div>
+      <div class="about-copy reveal" style="--i:2">
+        <p>Most engineering problems already have an obvious path: the established architecture, the familiar product category, or the solution the industry has converged on. Understanding that answer matters. Understanding how and why it became the status quo matters more. But the most interesting question is what happens when the problem is viewed from a slightly different angle? Features, constraints, or unsolved problems that were previously orthogonal to the original vision can suddenly become visible.</p>
+        <p>Sometimes that means attacking the source of a problem rather than improving the conventional treatment of its symptoms. Sometimes it means choosing an architecture that appears unusual at first but creates cleaner interfaces between subsystems, allows parts to be developed and tested in parallel, reduces the cost of iteration, simplifies maintenance, and makes future revisions less likely to disturb what already works. Those advantages do not only improve the first prototype. They compound through development, production, service, and the useful life of the system.</p>
+        <p>Other times, two competing approaches each contain part of the right answer, and the strongest solution emerges by combining the best of both into a third option.</p>
+        <p>Robotics makes this way of thinking especially valuable because mechanical design, electronics, sensing, controls, software, autonomy, manufacturing, and testing rarely exist in isolation. The gaps between those disciplines can reveal opportunities and small efficiency gains that are easy to miss when each problem is considered independently. Individually, those gains may seem minor. Stacked together, they can preserve design freedom, contain the consequences of failure, make future capabilities easier to add, reduce how often one decision forces several others to change, and create ripple effects that shape both short-term development and the long-term evolution of the system.</p>
+        <p>The goal is not to be different for the sake of being different. Conventional solutions usually exist for good reasons. The opportunity is to understand those reasons well enough to recognize when the status quo should be preserved, when it should be reborn, and when looking at both from a slightly different perspective can avoid throwing the baby out with the bathwater.</p>
+        <p>Ideas that seemed impractical or impossible five or ten years ago can become viable as technology, tools, and surrounding infrastructure evolve. The most compelling work is often the work that recognizes those shifts early and uses them where they can produce the greatest impact with the fewest resources. That space sits between understanding the accepted solution, questioning the assumptions around it, recognizing what has recently become possible, and combining those ideas into a stronger system.</p>
+      </div>
+    </div>
+  </section>
 
-      <p>Sometimes that means attacking the source of a problem rather than improving the conventional treatment of its symptoms. Sometimes it means choosing an architecture that appears unusual at first but creates cleaner interfaces between subsystems, allows parts to be developed and tested in parallel, reduces the cost of iteration, simplifies maintenance, and makes future revisions less likely to disturb what already works. Those advantages do not only improve the first prototype. They compound through development, production, service, and the useful life of the system.</p>
-
-      <p>Other times, two competing approaches each contain part of the right answer, and the strongest solution emerges by combining the best of both into a third option.</p>
-
-      <p>Robotics makes this way of thinking especially valuable because mechanical design, electronics, sensing, controls, software, autonomy, manufacturing, and testing rarely exist in isolation. The gaps between those disciplines can reveal opportunities and small efficiency gains that are easy to miss when each problem is considered independently. Individually, those gains may seem minor. Stacked together, they can preserve design freedom, contain the consequences of failure, make future capabilities easier to add, reduce how often one decision forces several others to change, and create ripple effects that shape both short-term development and the long-term evolution of the system.</p>
-
-      <p>The goal is not to be different for the sake of being different. Conventional solutions usually exist for good reasons. The opportunity is to understand those reasons well enough to recognize when the status quo should be preserved, when it should be reborn, and when looking at both from a slightly different perspective can avoid throwing the baby out with the bathwater.</p>
-
-      <p>Ideas that seemed impractical or impossible five or ten years ago can become viable as technology, tools, and surrounding infrastructure evolve. The most compelling work is often the work that recognizes those shifts early and uses them where they can produce the greatest impact with the fewest resources. That space sits between understanding the accepted solution, questioning the assumptions around it, recognizing what has recently become possible, and combining those ideas into a stronger system.</p>
+  <section id="contact" class="contact" aria-labelledby="contact-title">
+    <div class="wrap">
+      <div class="contact-card reveal">
+        <div>
+          <p class="eyebrow"><span class="num">05</span>Contact</p>
+          <h2 id="contact-title">Growing something in rows? <em>Let's talk.</em></h2>
+          <p class="lead">For Iron Leaf demos and pilots, use ironleafrobotics.ca. For everything else, email me.</p>
+        </div>
+        <div class="actions" id="contact-actions"></div>
+      </div>
     </div>
   </section>
 </main>
 
-<script src="assets/app.js?v=rc22"></script>
+<footer>
+  <div class="wrap">
+    <div class="top">
+      <div>
+        <h4>Ryan Collins</h4>
+        <p>Founder, Iron Leaf Robotics &middot; Electrical / Controls EIT &middot; Kelowna, BC</p>
+      </div>
+      <div>
+        <h4>Site</h4>
+        <ul><li><a href="#projects">Projects</a></li><li><a href="#experience">Experience</a></li><li><a href="#about">About</a></li></ul>
+      </div>
+      <div>
+        <h4>Iron Leaf</h4>
+        <ul><li><a href="project.html?id=iron-leaf">Case study</a></li><li><a href="https://www.ironleafrobotics.ca/">ironleafrobotics.ca</a></li><li><a href="https://www.ironleafrobotics.ca/sample-report/">Sample report</a></li></ul>
+      </div>
+    </div>
+    <svg class="wordmark" viewBox="0 0 1000 110" aria-hidden="true"><text x="0" y="92" textLength="1000" lengthAdjust="spacingAndGlyphs">RYAN COLLINS</text></svg>
+    <div class="bottom"><span>&copy; <span data-year>2026</span> Ryan Collins</span><span>Kelowna, BC</span></div>
+  </div>
+</footer>
+
+<script src="assets/ui.js?v=rc23"></script>
+<script src="assets/app.js?v=rc23"></script>
 </body>
 </html>

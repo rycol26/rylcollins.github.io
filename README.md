@@ -31,3 +31,10 @@ Three uploaded IMG_4164 files were exact duplicate copies of the same sunset vis
 
 ## RC6 cleanup
 Removed all resume links and the resume PDF from the site package. Removed the homepage Selected projects / Resume / LinkedIn link row and removed LinkedIn from site data.
+
+## RC23 (2026-11-02)
+- New design system shared with ironleafrobotics.ca: `assets/site.css` (tokens, Archivo + IBM Plex Mono self-hosted in `assets/fonts`, viewfinder media, grain, reveal-on-scroll), `assets/ui.js` (nav, in-view clip playback with pause buttons, lightbox). `assets/styles.css` and `portfolio-rc22.css` are no longer loaded.
+- Iron Leaf Robotics case study (`project.html?id=iron-leaf`; the old `?id=field-rover` link still resolves) with clips in `assets/media/iron-leaf/` (720p, none reused on the page). Every clip and image appears once.
+- Home: hero clip, Now band with Iron Leaf counts, featured cards, filterable index, experience timeline, contact.
+- Aerospace: undocumented 2026 placement removed. Claims follow ilr-ops FACTS (evidence/R18/portfolio_rc23.py).
+- Preview: `py -m http.server 8000` and open http://localhost:8000

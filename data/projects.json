@@ -1,187 +1,225 @@
 [
   {
-    "id": "field-rover",
-    "title": "Autonomous Field Rover & Sensor Platform",
+    "id": "iron-leaf",
+    "aliases": [
+      "field-rover"
+    ],
+    "title": "Iron Leaf Robotics — Ground-Sensing Cart for Orchards & Vineyards",
     "year": "2026–Present",
     "featured": true,
     "category": [
       "Robotics",
+      "Computer Vision",
       "Embedded",
-      "Computer Vision"
+      "Electronics"
     ],
-    "status": "Active development",
-    "summary": "A modular Raspberry Pi/Linux field robotics platform for geotagged sensing, remote diagnostics, computer-vision development, and future autonomous operation.",
+    "status": "Founder · full-time since Oct 2026",
+    "summary": "A human-pushed sensing cart that records geolocated camera, lidar and IMU data along every row, turned into human-checked grower reports of gopher activity and irrigation stakes. Demoed on five Okanagan farms in fall 2026.",
     "impact": [
-      "RGB + LiDAR + GNSS + IMU",
-      "CAN-based architecture",
-      "Remote diagnostics"
+      "5 farms demoed",
+      "8 grower interviews",
+      "~171k frames in the first 5 runs"
     ],
+    "links": [
+      {
+        "label": "ironleafrobotics.ca",
+        "href": "https://www.ironleafrobotics.ca/"
+      },
+      {
+        "label": "Sample report",
+        "href": "https://www.ironleafrobotics.ca/sample-report/"
+      }
+    ],
+    "heroVideo": {
+      "src": "assets/media/iron-leaf/field-shoulder.mp4",
+      "poster": "assets/media/iron-leaf/field-shoulder.webp",
+      "alt": "Ryan pushing the sensing cart down an orchard row in fall colours"
+    },
+    "hero": "assets/media/iron-leaf/cart-orchard-side.webp",
     "overview": [
-      "I am developing a modular field robotics platform for sensor integration, field-data collection, computer-vision development, and future autonomous operation. The current prototype is intentionally human-powered so the sensing, electrical, software, and safety systems can be validated before powered mobility is introduced.",
-      "The platform is designed as a reusable robotics system rather than around one demo. Current work emphasizes reliable field data, repeatable diagnostics, and architecture that can migrate to a larger powered rover."
+      "I founded Iron Leaf Robotics in 2026 to give orchard and vineyard growers row-by-row field data. Growers walk or drive their rows to find problems, and gophers in particular are hard to get ahead of on foot. The first product is a human-pushed sensing cart that records every row, and a report of gopher activity and irrigation stakes that look out of line, where every mark is one I confirmed by eye.",
+      "The cart is deliberately a learning vehicle: pushing by hand lets me iterate on sensing, calibration and data quality before spending on autonomy. Grower interviews started in May 2026, the cart's first field run was Sept 30, and I went full-time on Oct 20 to run weekday demos before the leaves fell."
     ],
     "objectives": [
-      "Make field data repeatable enough to support later computer-vision and autonomy work.",
-      "Expose faults and sensor-health problems early instead of discovering them after a field run.",
-      "Keep the electrical/software interfaces modular enough to migrate onto a larger powered rover.",
-      "Validate sensing and safety before introducing propulsion as another source of failure."
+      "Record every row with timestamped, geolocated imagery that future models can be re-run against.",
+      "Turn a field visit into a report a grower can act on, with each mark confirmed by a person.",
+      "Learn from growers which jobs are worth automating before building a powered robot.",
+      "Build a labelled dataset fast enough to train detection models alongside the hardware."
     ],
     "role": [
-      "System-level electrical and controls architecture",
-      "Linux service design and onboard software integration",
-      "Sensor and camera integration",
-      "Remote diagnostics, networking, and health monitoring",
-      "Safety-state logic and field validation"
+      "Founder: customer discovery, grower interviews, demos and pilot letters of intent",
+      "Electrical, controls and mechanical design of the cart",
+      "Cart software, data pipeline and report tooling, written with AI coding tools (Codex and Claude Code)",
+      "Data labelling and prototype computer-vision models"
     ],
     "process": [
       [
-        "Stable interfaces",
-        "Separated high-bandwidth sensing from embedded control so each side could evolve without forcing wholesale rewrites."
+        "Interviews first",
+        "Interviewed eight growers from May to October 2026, before and alongside the demos; seven of the eight said they want gopher control."
       ],
       [
-        "Observable services",
-        "Built capture and monitoring as services with stable device mapping, health checks, diagnostics, and remote access."
+        "Pushed, not driven",
+        "Kept the cart human-pushed so sensing and calibration could be iterated in the field without adding propulsion as another failure source."
       ],
       [
-        "Evidence pipeline",
-        "Structured field capture around raw imagery, sensor data, timing, diagnostics, and location metadata rather than one-off demos."
+        "Iterate between demos",
+        "Between demos I tilted the lidar down 15° for a 2.5D ground scan and added stereoscopic Ethernet (PoE) cameras, which have now recorded on three farms."
       ],
       [
-        "Mobility gate",
-        "Kept the prototype human-powered until sensing, safety, and observability were reliable enough to justify adding propulsion."
+        "Human-in-the-loop reports",
+        "A frame-ranking model sorts the footage for my review; every mark in a grower's report is one I confirmed by eye."
       ]
     ],
     "results": [
-      "Onboard Linux computing, remote access, and camera capture are operational.",
-      "Stable device mapping, system-health monitoring, and diagnostics are working on the prototype.",
-      "Safety-state logic and structured field-data capture are implemented.",
-      "Localization and remaining sensor integration are the current validation focus before powered mobility."
+      "The first five field runs (Sept 30 to Oct 17) totalled about 181 minutes, about 6.2 km of distance driven and about 171,000 camera frames, with 0 raw-file checksum failures.",
+      "Demos have run on five farms this fall; anonymized sample reports are public at ironleafrobotics.ca/sample-report.",
+      "First model: a frame ranker trained on 546 frames I reviewed ranks gopher-mound frames above chance on farms it never trained on (30 of 30 held-out runs). It is used internally to speed up review, not as a detector.",
+      "About 3,000 mound frames and 1,300 irrigation-stake frames labelled as of Oct 30, 2026.",
+      "One grower has signed a non-binding letter of intent for a 2027 pilot.",
+      "Next: detection models that hold up on farms they haven't seen. Prototype model output shown here is not validated."
     ],
     "technologies": [
       "Raspberry Pi",
       "Linux",
       "Python",
-      "V4L2",
-      "FFmpeg",
-      "systemd",
-      "Tailscale",
-      "CAN bus",
-      "RGB cameras",
-      "2D LiDAR",
+      "OAK PoE stereo cameras",
+      "USB RGB cameras",
+      "2D lidar",
       "IMU",
       "GNSS",
-      "LTE"
-    ],
-    "evidence": [
-      [
-        "System architecture diagram",
-        "recommended",
-        "Show sensing, compute, communications, safety, and logging together."
-      ],
-      [
-        "Field platform photo",
-        "recommended",
-        "Establish the physical system and current prototype state."
-      ],
-      [
-        "Camera diagnostics screenshot",
-        "recommended",
-        "Prove remote observability and repeatable capture tooling."
-      ]
+      "LTE",
+      "12S LiPo",
+      "Aluminum frame",
+      "PyTorch",
+      "YOLO",
+      "FFmpeg",
+      "systemd",
+      "Tailscale"
     ],
     "media": [
       {
-        "type": "image",
-        "src": "assets/media/field-rover/prototype_front_rc22.jpg",
-        "caption": "Current field platform with GNSS antenna, onboard compute, sensing hardware, and the full wheel envelope visible.",
-        "alt": "Front view of the current field rover prototype",
-        "layout": "screenfill",
-        "placement": "overview"
+        "type": "video",
+        "src": "assets/media/iron-leaf/field-demo.mp4",
+        "poster": "assets/media/iron-leaf/field-demo.webp",
+        "caption": "On a demo: the cart is pushed down each row while cameras, lidar, GNSS and a Raspberry Pi logger record.",
+        "alt": "The cart being pushed through a row",
+        "placement": "overview",
+        "layout": "wide"
       },
       {
-        "type": "image",
-        "src": "assets/media/field-rover/prototype_overhead_cropped.jpg",
-        "caption": "Top-down hardware view showing the real packaging, wiring, GNSS, compute, and wheel-envelope constraints behind the platform architecture.",
-        "alt": "Overhead view of the field rover prototype",
-        "layout": "compact",
-        "placement": "validation"
+        "type": "video",
+        "src": "assets/media/iron-leaf/field-crossbar.mp4",
+        "poster": "assets/media/iron-leaf/field-crossbar.webp",
+        "caption": "The sensor crossbar between demos: USB cameras plus the stereoscopic PoE cameras added in October.",
+        "alt": "Close-up of the cart's camera crossbar",
+        "placement": "development",
+        "layout": "half"
       },
       {
-        "type": "image",
-        "src": "assets/media/field-rover/architecture.svg",
-        "caption": "Validation architecture: field sensors feed observable Linux services and reusable evidence before powered mobility is introduced.",
-        "alt": "Field rover system architecture diagram",
-        "layout": "wide",
-        "placement": "development"
+        "type": "video",
+        "src": "assets/media/iron-leaf/oak-depth.mp4",
+        "poster": "assets/media/iron-leaf/oak-depth.webp",
+        "caption": "Stereo depth from the PoE camera beside its colour view, recorded on an orchard row.",
+        "alt": "Colour and depth views side by side",
+        "placement": "development",
+        "layout": "half"
+      },
+      {
+        "type": "video",
+        "src": "assets/media/iron-leaf/oak-orchard-row.mp4",
+        "poster": "assets/media/iron-leaf/oak-orchard-row.webp",
+        "caption": "Raw PoE camera footage along an orchard row: the kind of row-by-row record a report is built from.",
+        "alt": "Forward camera view along an orchard row",
+        "placement": "development",
+        "layout": "wide"
+      },
+      {
+        "type": "video",
+        "src": "assets/media/iron-leaf/mounds-week-a.mp4",
+        "poster": "assets/media/iron-leaf/mounds-week-a.webp",
+        "caption": "Prototype mound detector on cart footage. Prototype model output, not validated.",
+        "alt": "Model boxes around gopher mounds",
+        "placement": "validation",
+        "layout": "half",
+        "prov": "model-unreviewed"
+      },
+      {
+        "type": "video",
+        "src": "assets/media/iron-leaf/stakes-angle-01.mp4",
+        "poster": "assets/media/iron-leaf/stakes-angle-01.webp",
+        "caption": "Irrigation stakes labelled by hand: red marks a leaning or fallen stake.",
+        "alt": "Hand labels on irrigation stakes",
+        "placement": "validation",
+        "layout": "half",
+        "prov": "hand"
       }
     ],
-    "hero": "assets/media/field-rover/prototype_front_rc22.jpg",
     "sectionTitles": {
       "overview": [
-        "01 · Prototype strategy",
-        "Validate the hard-to-see failures first"
+        "01 · Why this exists",
+        "Row-by-row field data, checked by a person"
       ],
       "objectives": [
-        "02 · Evidence goals",
-        "What must become repeatable"
+        "02 · Goals",
+        "What the first platform has to prove"
       ],
       "role": [
         "03 · Ownership",
-        "System architecture and integration"
+        "Founder and sole engineer"
       ],
       "process": [
-        "04 · Reliability approach",
-        "Designing for observability before autonomy"
+        "04 · Approach",
+        "Interviews, demos and iteration in the field"
       ],
       "results": [
-        "05 · Current state",
-        "What is operational now"
+        "05 · Where it stands",
+        "Fall 2026 results"
       ]
     },
     "snapshot": [
       [
-        "Compute",
-        "Raspberry Pi / Linux operational"
+        "Farms demoed",
+        "5 · fall 2026"
       ],
       [
-        "Evidence",
-        "Structured field capture implemented"
+        "Grower interviews",
+        "8"
       ],
       [
-        "Mobility",
-        "Intentionally gated until sensing is reliable"
+        "Field data",
+        "~181 min · ~171k frames (first 5 runs)"
       ]
     ],
     "ownershipBand": {
-      "owned": "System architecture · onboard Linux services · sensor integration · diagnostics · safety-state logic",
-      "team": "Field platform used to build reusable sensing and vision evidence for later autonomous operation"
+      "owned": "Founder and sole engineer · cart electrical, controls and mechanical design · software · data · models · grower demos",
+      "team": "Iron Leaf Robotics Inc. · Kelowna, BC · ironleafrobotics.ca"
     },
     "decisions": [
       {
-        "decision": "Keep the current prototype human-powered",
-        "why": "Sensing, observability, and safety can be validated without propulsion adding another high-consequence failure source.",
-        "tradeoff": "The prototype does not yet demonstrate autonomous mobility.",
-        "evidence": "Camera capture, device mapping, health monitoring, diagnostics, and structured data capture are operational before the mobility gate is opened."
+        "decision": "Keep the first cart human-pushed",
+        "why": "Sensing, calibration and data quality can be iterated in real rows without propulsion adding a high-consequence failure source.",
+        "tradeoff": "The cart does not yet demonstrate autonomous mobility, and someone has to walk every row.",
+        "evidence": "Five field runs and five farm demos recorded with 0 raw-file checksum failures in the first five runs."
       },
       {
-        "decision": "Treat diagnostics as part of the product architecture",
-        "why": "Field robotics failures are expensive when the system cannot explain what went wrong after a run.",
-        "tradeoff": "More service and logging infrastructure before feature work appears visually impressive.",
-        "evidence": "Remote access, stable device mapping, health monitoring, and service-level diagnostics are already running on the prototype."
+        "decision": "Human-confirmed reports instead of model-only output",
+        "why": "Prototype models are not validated on farms they haven't seen, and a wrong mark costs a grower's trust.",
+        "tradeoff": "Review time per visit until the models generalize.",
+        "evidence": "A frame ranker sorts the footage; every mark in a report is confirmed by eye."
       },
       {
-        "decision": "Preserve raw field evidence",
-        "why": "Images and sensor data become more valuable when later algorithms can be re-run against the original source evidence.",
-        "tradeoff": "Higher storage and metadata discipline than a demo-only capture pipeline.",
-        "evidence": "Structured field capture records raw imagery and supporting session context rather than only processed outputs."
+        "decision": "Start with the job growers asked for",
+        "why": "Seven of eight interviewed growers said they want gopher control, and nobody we could find sells automated gopher detection for orchards or vineyards.",
+        "tradeoff": "One job alone may not pay for a farm's own robot, so early on the plan is to move the robot farm to farm as a shared service.",
+        "evidence": "Eight grower interviews, May to October 2026."
       }
     ],
     "iteration": {
-      "observed": "Prototype progress was increasingly limited by whether field failures could be reproduced and diagnosed.",
-      "changed": "Capture, health checks, stable device identities, remote access, and diagnostics were promoted from helper scripts into the platform architecture.",
-      "verified": "The current cart can collect structured data while exposing the health of the services and devices responsible for that evidence."
+      "observed": "After-work demos were losing daylight mid-run, and growers needed weekday visits before the leaves fell.",
+      "changed": "Went full-time on Oct 20, 2026, tilted the lidar 15° for a 2.5D ground scan and added stereoscopic PoE cameras.",
+      "verified": "Demos then ran on weekdays across five farms, and the stereo cameras have recorded on three of them."
     },
-    "projectSummary": "A modular field robotics platform built to make sensor data trustworthy before autonomy depends on it. The current system combines geotagged sensing, observable Linux services, remote diagnostics, and safety-state logic in a reusable hardware/software testbed."
+    "projectSummary": "Iron Leaf Robotics builds field robotics for orchards and vineyards. I designed and built the first platform: a human-pushed ground-sensing cart that records geolocated imagery along every row and turns a field visit into a human-checked report of gopher activity and irrigation stakes."
   },
   {
     "id": "aerospace",
@@ -194,10 +232,10 @@
       "Leadership"
     ],
     "status": "Competition complete",
-    "summary": "Electrical-system leadership for a multi-drone autonomous firefighting project that placed 6th overall and won the 2026 AEAC Innovation Award.",
+    "summary": "Electrical-system leadership for a multi-drone autonomous firefighting project that won the 2026 AEAC Innovation Award.",
     "impact": [
       "2026 AEAC Innovation Award",
-      "6th overall",
+      "Mothership + scout architecture",
       "50 V → 5 V / 40 W converter"
     ],
     "overview": [
@@ -236,7 +274,6 @@
     ],
     "results": [
       "The mothership architecture received the 2026 AEAC Innovation Award.",
-      "The team placed 6th overall at the 2026 AEAC competition.",
       "The competition aircraft integrated the required sensing, communications, power, and autonomy hardware into a working system.",
       "The custom 50 V to 5 V, 40 W synchronous converter reached approximately 92% efficiency."
     ],
@@ -353,10 +390,6 @@
         "9th overall"
       ],
       [
-        "2026",
-        "6th overall"
-      ],
-      [
         "Recognition",
         "2026 AEAC Innovation Award"
       ]
@@ -385,7 +418,7 @@
     },
     "ownershipBand": {
       "owned": "Electrical architecture · interface definition · electrical subteam leadership · power/sensing/comms integration",
-      "team": "Mothership firefighting architecture · 2026 AEAC Innovation Award · 6th overall"
+      "team": "Mothership firefighting architecture · 2026 AEAC Innovation Award"
     },
     "decisions": [
       {
@@ -412,7 +445,7 @@
       "changed": "Interfaces, review gates, and subsystem readiness were treated as first-class design work rather than late integration tasks.",
       "verified": "The full competition system integrated power, sensing, communications, and autonomy hardware and reached the 2026 competition."
     },
-    "projectSummary": "Electrical-system leadership across two AEAC competition seasons, culminating in a deliberately unconventional mothership architecture that placed 6th overall and won the 2026 AEAC Innovation Award."
+    "projectSummary": "Electrical-system leadership across two AEAC competition seasons, culminating in a deliberately unconventional mothership architecture that won the 2026 AEAC Innovation Award."
   },
   {
     "id": "capstone",
