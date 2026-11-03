@@ -152,7 +152,15 @@ section.band { background: var(--bg-deep); border-top: 1px solid var(--line); bo
 .f-body p { color: var(--muted); margin: 0; font-size: .98rem; }
 .f-card .chips { margin-top: .2rem; }
 .f-card .chip-over { position: absolute; z-index: 5; top: 1rem; left: 1rem; }
-@media (max-width: 54rem) { .featured { grid-template-columns: 1fr; } .f-card:first-child { grid-row: auto; } .f-card:first-child .media { aspect-ratio: 16 / 10; min-height: 0; } }
+/* Lead card: full-width and horizontal so wide field photos (lake and skyline) aren't cropped to a portrait strip. */
+.featured { grid-template-columns: 1fr 1fr; grid-template-rows: none; }
+.f-card:first-child { grid-row: auto; grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr); }
+.f-card:first-child > .media { grid-column: 1; grid-row: 1; }
+.f-card:first-child > .f-body { grid-column: 2; grid-row: 1; }
+.f-card:first-child .media { aspect-ratio: auto; width: 100%; min-height: 24rem; flex: none; }
+.f-card:first-child .f-body { align-content: center; padding: clamp(1.5rem, 3vw, 2.5rem); }
+.f-card:first-child .f-body h3 { font-size: clamp(1.4rem, 2.4vw, 2rem); }
+@media (max-width: 54rem) { .featured { grid-template-columns: 1fr; } .f-card:first-child { grid-template-columns: 1fr; } .f-card:first-child .media { aspect-ratio: 16 / 10; height: auto; } }
 
 /* ---------- Project index ---------- */
 .index-head { display: flex; justify-content: space-between; align-items: end; gap: 1.5rem; flex-wrap: wrap; margin: clamp(3.5rem, 7vw, 5.5rem) 0 1.25rem; }

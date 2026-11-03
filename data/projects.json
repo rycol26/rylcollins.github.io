@@ -35,7 +35,7 @@
       "poster": "assets/media/iron-leaf/field-shoulder.webp",
       "alt": "Ryan pushing the sensing cart down an orchard row in fall colours"
     },
-    "hero": "assets/media/iron-leaf/cart-orchard-side.webp",
+    "hero": "assets/media/iron-leaf/tantalus-skyline.webp",
     "overview": [
       "I founded Iron Leaf Robotics in 2026 to give orchard and vineyard growers row-by-row field data. Growers walk or drive their rows to find problems, and gophers in particular are hard to get ahead of on foot. The first product is a human-pushed sensing cart that records every row, and a report of gopher activity and irrigation stakes that look out of line, where every mark is one I confirmed by eye.",
       "The cart is deliberately a learning vehicle: pushing by hand lets me iterate on sensing, calibration and data quality before spending on autonomy. Grower interviews started in May 2026, the cart's first field run was Sept 30, and I went full-time on Oct 20 to run weekday demos before the leaves fell."
@@ -74,7 +74,7 @@
       "The first five field runs (Sept 30 to Oct 17) totalled about 181 minutes, about 6.2 km of distance driven and about 171,000 camera frames, with 0 raw-file checksum failures.",
       "Demos have run on five farms this fall; anonymized sample reports are public at ironleafrobotics.ca/sample-report.",
       "First model: a frame ranker trained on 546 frames I reviewed ranks gopher-mound frames above chance on farms it never trained on (30 of 30 held-out runs). It is used internally to speed up review, not as a detector.",
-      "About 3,000 mound frames and 1,300 irrigation-stake frames labelled as of Oct 30, 2026.",
+      "About 5,000 mound frames and 3,000 irrigation-stake frames labelled so far.",
       "One grower has signed a non-binding letter of intent for a 2027 pilot.",
       "Next: detection models that hold up on farms they haven't seen. Prototype model output shown here is not validated."
     ],
